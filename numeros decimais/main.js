@@ -14,7 +14,6 @@ btn.addEventListener("click", () => {
     decimialRest = 0.5;
   }
 
-
   console.log(decimialRest)
   console.log(decimialRest)
   input.innerText = number + decimialRest;
