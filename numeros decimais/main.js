@@ -13,7 +13,10 @@ btn.addEventListener("click", () => {
   } else {
     decimialRest = 0.5;
   }
+
+  
   console.log(decimialRest)
   input.innerText = number + decimialRest;
+
 });
 
