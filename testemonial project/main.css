@@ -51,7 +51,7 @@ a {
   background-size: cover;
   color: white;
   height: 100vh;
-  padding-top: 50px;
+  padding-top: 30px;
 }
 
 .header-client {
@@ -162,3 +162,43 @@ a {
 .costumer-rating i {
   margin: 0 5px;
 }
+
+.form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+}
+
+#form{
+  display: flex;
+  flex-direction: column;
+}
+
+
+.form input {
+  color: black;
+}
+
+textarea{
+  color: black;
+}
+
+.score{
+  width: 100px;
+}
+
+.btn-submit{
+  margin:auto;
+  justify-self: left;
+  margin-top: 15px;
+  width: 100px;
+  color: white;
+  background-color:#CB9900;
+  border: none;
+  font-size: 2rem;
+  border-radius: 2px;
+}
+
+
+
