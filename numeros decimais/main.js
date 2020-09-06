@@ -6,8 +6,6 @@ btn.addEventListener("click", () => {
   let decimialRest = Number.parseFloat((number % 1));
   console.log(number)
   number = number - decimialRest;
-
-
   if (decimialRest <= 0.3) {
     decimialRest = 0
   } else if (decimialRest >= 0.7) {
@@ -15,8 +13,7 @@ btn.addEventListener("click", () => {
   } else {
     decimialRest = 0.5;
   }
-
   console.log(decimialRest)
-
   input.innerText = number + decimialRest;
 });
+
