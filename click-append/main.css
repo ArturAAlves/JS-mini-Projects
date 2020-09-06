@@ -1,0 +1,88 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: sans-serif;
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+  overflow-x: hidden;
+  color: #16a4c4;
+}
+
+body {
+  margin: 0px;
+  padding: 0px;
+}
+
+article,
+aside,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section {
+  display: block;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  padding: 100px;
+  background-color: rgb(30, 30, 202);
+  min-height: 100vh;
+  text-align: center;
+}
+
+.box {
+  color: white;
+  background-color: rgb(224, 206, 206);
+  border-radius: 7px;
+  border: 1px solid black;
+  height: 300px;
+  padding: 30px;
+  width: 450px;
+  margin: auto;
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn {
+  font-size: 2rem;
+  background-color: brown;
+  border: none;
+  padding: 15px 35px;
+  margin: 10px;
+  color: rgb(163, 162, 162);
+  border-radius: 15px;
+  outline: none;
+}
+
+.btn:hover {
+  background-color: brown;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+}
+
+.btn:active {
+  background-color: brown;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  transform: translate(1px, 1px);
+  box-shadow: 3px 3px 3px 3px rgba(128, 128, 128, 0.404);
+}

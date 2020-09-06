@@ -1,0 +1,104 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: sans-serif;
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+  overflow-x: hidden;
+  color: #16a4c4;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+article,
+aside,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section {
+  display: block;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  background-color: rgb(54, 54, 131);
+  color: white;
+  font-size: 2rem;
+}
+.container {
+  background-color: teal;
+  text-align: center;
+  width: 600px;
+  height: 450px;
+  margin: auto;
+  margin-top: 100px;
+  padding: 15px;
+  box-shadow: 5px 5px 5px 5px rgba(12, 12, 12, 0.26);
+}
+
+.container-btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.container-btn button {
+  text-align: center;
+  width: 150px;
+  padding: 25px 5px;
+  margin: 15px;
+  font-size: 1.1rem;
+  background-color: rgb(74, 74, 138);
+  border: none;
+  outline: none;
+  color: white;
+  border-radius: 8px;
+}
+
+.container-btn button:hover {
+  color: rgb(175, 175, 175);
+  background-color: rgba(74, 74, 138, 0.9);
+  transform: translate(1px, 1px);
+  box-shadow: 5px 5px rgba(12, 12, 12, 0.26);
+  cursor: pointer;
+}
+
+.container-btn button:active {
+  color: rgb(175, 175, 175);
+  background-color: rgba(74, 74, 138, 0.9);
+  transform: translate(2px, 2px);
+  box-shadow: 3px 3px rgba(12, 12, 12, 0.26);
+  cursor: pointer;
+}
+
+.counter {
+  background-color: rgb(128, 0, 43);
+  display: flex;
+  align-items: center;
+  margin: auto;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
