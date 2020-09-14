@@ -11,7 +11,6 @@ function currentTime() {
   sec = sec < 10 ? "0" + sec : sec;
   msec = msec < 100 ? "0" + msec : msec;
 
-
   document.getElementById("clock").innerText =
     hour + " : " + min + " : " + sec + " : " + msec;
 

@@ -1,0 +1,232 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+    overflow-x: hidden;
+    color: #16a4c4;
+}
+
+body {
+    font-family: "Kaushan Script", cursive;
+    margin: 0;
+    padding: 0;
+    background-color: #EEEEEE;
+}
+
+article,
+aside,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section {
+    display: block;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+.main-container {
+    position: relative;
+    padding-bottom: 50px;
+    margin: 0px 50px
+}
+
+.header {
+    margin-bottom: 50px;
+}
+
+h1 {
+    font-size: 5rem;
+}
+
+.pink {
+    font-size: 6rem;
+    color: #ef7998;
+}
+
+.links {
+    display: flex;
+    justify-content: center;
+    font-size: 2rem;
+}
+
+.menu {
+    margin-bottom: 50px;
+}
+
+.link {
+    margin: 0px 35px;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px 25px;
+}
+
+.link:hover {
+    border-radius: 0px;
+    transition: 0.5s;
+}
+
+.link a:hover {
+    color: #ef7998;
+    transition: 0.5s;
+    border-radius: 0px;
+}
+
+.text-box {
+    width: 300px;
+    padding-left: 10px;
+}
+
+.search {
+    font-size: 2rem;
+}
+
+.fas {
+    color: #ef7998;
+}
+
+.products {
+    margin-top: 25px;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgb(197, 196, 196);
+    height: 350px;
+    cursor: pointer;
+    box-shadow: 5px 5px 5px 5px rgba(212, 212, 212, 0.432);
+    margin-top: 25px;
+}
+
+.img-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.text-container {
+    height: 75px;
+    display: flex;
+    flex-direction: row;
+    align-items: center!important;
+    justify-content: space-between;
+    padding: 0 15px;
+    font-size: 2.2rem;
+}
+
+.img {
+    display: block;
+    width: 100%;
+    height: 300px;
+    transition: 2s;
+}
+
+.img:hover {
+    transform: scale(1.2);
+    transition: 1s;
+}
+
+.fa-gifts {
+    background-color: orange;
+    color: rgba(0, 0, 0, 0.808);
+    margin: 5px;
+    border-radius: 7px;
+}
+
+.fade-in {
+    position: absolute;
+    z-index: 51;
+    bottom: 0;
+    right: 0;
+    font-size: 3rem;
+    padding: 10px;
+    transform: translate(100%, 100%);
+    transition: 0.5s;
+}
+
+.hover-img {
+    transform: translate(0%, 0%);
+    transition: 0.5s;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 55;
+    background: rgba(0, 0, 0, 0.6);
+    display: none;
+}
+
+.background-img {
+    display: block;
+    margin-top: 10vh;
+    height: 80vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    /*     background-image: url("./img/cake1.jpg");
+ */
+}
+
+.arrow-config {
+    font-size: 5rem;
+}
+
+.arrow-config:hover {
+    font-size: 5rem;
+}
+
+.arrow {
+    position: absolute;
+    z-index: 100;
+    cursor: pointer;
+}
+
+.arrow:hover {
+    position: absolute;
+    z-index: 100;
+    cursor: pointer;
+}
+
+.arrow-left {
+    right: 50%;
+    top: 50%;
+    transform: translateX(-630%);
+}
+
+.arrow-right {
+    left: 50%;
+    top: 50%;
+    transform: translateX(630%);
+}
+
+.arrow-close {
+    left: 50%;
+    top: 10%;
+    transform: translateX(630%);
+}
+
+.modal-display {
+    display: block;
+}

@@ -50,7 +50,7 @@ a {
   background-position: center;
   background-size: cover;
   color: white;
-  height: 100vh;
+  height: 130vh;
   padding-top: 30px;
 }
 
@@ -170,35 +170,31 @@ a {
   text-align: left;
 }
 
-#form{
+#form {
   display: flex;
   flex-direction: column;
 }
-
 
 .form input {
   color: black;
 }
 
-textarea{
+textarea {
   color: black;
 }
 
-.score{
+.score {
   width: 100px;
 }
 
-.btn-submit{
-  margin:auto;
+.btn-submit {
+  margin: auto;
   justify-self: left;
   margin-top: 15px;
   width: 100px;
   color: white;
-  background-color:#CB9900;
+  background-color: #cb9900;
   border: none;
   font-size: 2rem;
   border-radius: 2px;
 }
-
-
-

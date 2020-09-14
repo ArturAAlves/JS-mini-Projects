@@ -1,0 +1,107 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: sans-serif;
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+    overflow-x: hidden;
+    color: #16a4c4;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+article,
+aside,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section {
+    display: block;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #00aaffaf, #1f6d3f);
+}
+
+.calculator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 15vh;
+}
+
+.input {
+    width: 420px;
+    height: 100px;
+    text-align: right;
+    border: none;
+    font-size: 30px;
+    outline: none;
+    padding-right: 10px;
+    background-color: rgba(0, 0, 0, 0.404);
+    color: rgb(207, 207, 207);
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.input-last {
+    height: 50px;
+    font-size: 20px;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 420px;
+    background-color: rgba(255, 255, 255, 0.828);
+    justify-content: center;
+    padding-bottom: 2px;
+}
+
+.container>button {
+    width: 100px;
+    height: 55px;
+    margin: 2px;
+    font-size: 2rem;
+    background-color: rgba(87, 163, 173, 0.219);
+    border: none;
+    outline: none;
+}
+
+.container>button:hover {
+    cursor: pointer;
+}
+
+.span-two {
+    width: 204px!important;
+}
+
+.input-boxes {
+    display: flex;
+    flex-direction: column;
+}
