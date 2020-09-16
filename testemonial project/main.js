@@ -107,7 +107,6 @@ btnSubmit.addEventListener("click", (e) => {
     text: insertReview.value
   }
 
-
   clients.push(cliente);
   insertName.value = ""
   insertScore.value = ""
