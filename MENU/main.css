@@ -1,0 +1,176 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: sans-serif;
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+  overflow-x: hidden;
+}
+
+article,
+aside,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section {
+  display: block;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+#navbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 5vh;
+  overflow: hidden;
+  padding-left: 15px;
+}
+
+.navbar-links {
+  display: flex;
+}
+
+.navbar-link {
+  margin: 0px 25px;
+}
+
+.logo-img {
+  width: 50px;
+}
+
+#main-container {
+  margin-top: 50px;
+  overflow: hidden;
+}
+
+.main-img-container {
+  padding: 15px;
+}
+
+.main-img-container img {
+  max-width: 100%;
+}
+
+.img-toggle {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  padding: 15px;
+  animation: fadein 1s;
+}
+
+.burguer {
+  position: relative;
+  z-index: 99;
+}
+
+.burguer:hover {
+  cursor: pointer;
+}
+
+.img-zoom {
+  position: relative;
+  z-index: 5;
+  transform: scale(1.2);
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+}
+.footer-link {
+  margin: 15px;
+}
+
+@media screen and (max-width: 991px) {
+  #navbar {
+    justify-content: space-around;
+    padding: 15px 0px;
+    margin-left: -100px;
+    margin-right: -100px;
+  }
+
+  .navbar-links {
+    position: absolute;
+    flex-direction: column;
+    justify-content: space-evenly;
+    top: 0;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    z-index: 50;
+    font-size: 3rem;
+    transform: translateX(100%);
+    background-color: rgba(0, 0, 0, 0.699);
+  }
+
+  .bar {
+    /*    width: 25px;
+    height: 4px;
+    background-color: black;
+    margin-top: 4px;
+    transition: 0.5s; */
+
+    width: 31px;
+    height: 5px;
+    background-color: black;
+    margin: 6px 0;
+    transition: 0.4s;
+  }
+
+  .toggle-menu {
+    transform: translateX(0px);
+    transition: 1s;
+    animation: fadein 2s;
+    overflow-y: hidden !important;
+  }
+
+  .bar-w {
+    background-color: white;
+    transition: 0.5s;
+  }
+
+  .html-overflow {
+    overflow: hidden;
+  }
+
+  .bar1-active {
+    -webkit-transform: rotate(-45deg) translate(-9px, 8px);
+    transform: rotate(-45deg) translate(-9px, 6px);
+  }
+  .bar2-active {
+    opacity: 0;
+  }
+  .bar3-active {
+    -webkit-transform: rotate(45deg) translate(-9px, -8px);
+    transform: rotate(45deg) translate(-9px, -7px);
+  }
+}

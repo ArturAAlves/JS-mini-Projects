@@ -29,116 +29,14 @@ a {
     text-decoration: none;
 }
 
-.container-fluid {
-    height: 100vh;
-    background-color: rgba(228, 228, 228, 0.685);
+body{
+    background: linear-gradient(90deg, rgba(85,172,179,0.958420868347339) 7%, rgba(71,203,148,1) 100%);
+    color: white;
 }
 
-.form {
-    display: flex;
+.todo-container{
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+
 }
-
-.btn {
-    width: 150px;
-    height: 50px;
-    outline: none!important;
-    border: 1px solid rgb(0, 200, 77);
-    color: rgb(16, 138, 16);
-    font-size: 2rem;
-    border-radius: 0px;
-}
-
-.btn:hover {
-    background-color: rgba(238, 244, 255, 0.883);
-    color: rgb(49, 49, 49);
-}
-
-.input {
-    width: 100%;
-    border: 1px solid rgb(0, 200, 77);
-    border-right: none;
-    outline: none;
-    color: rgb(49, 49, 49);
-    font-size: 2rem;
-    padding-left: 20px!important;
-}
-
-.list {
-    display: flex;
-}
-
-.text {
-    width: 100%;
-}
-
-.text h5 {
-    text-align: start;
-    padding-left: 20px;
-    font-size: 3.5rem;
-}
-
-.icons {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 150px;
-}
-
-.btn-recliclar {
-    font-size: 2.5rem;
-    color: rgb(214, 52, 52);
-    margin: 5px;
-}
-
-.btn-editar {
-    font-size: 2.5rem;
-    color: rgb(68, 149, 224);
-    margin: 5px;
-}
-
-
-
-.btn-done {
-    font-size: 2.8rem;
-    color: rgb(189, 65, 27);
-    margin: 5px;
-}
-
-.btn-not-done {
-    font-size: 2.8rem;
-    color: rgb(27, 189, 27);
-    margin: 5px;
-}
-
-
-
-
-.icon:hover {
-    cursor: pointer;
-    font-size: 3rem;
-}
-
-.btn-done:hover {
-    font-size: 3.2rem;
-}
-
-.recicle-animation {
-    transform: translateY(-500px) rotate(350deg);
-    transition: 3s;
-    overflow: hidden;
-}
-
-.btn-clear {
-    border-radius: 7px;
-    margin-top: 50px;
-}
-
-.hide-list {
-    display: none
-}
-
-.overline {
-    text-decoration: line-through;
-  }
-
-
