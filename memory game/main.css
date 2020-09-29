@@ -73,7 +73,7 @@ body {
     background-image: url("./img/cardback.png ");
     background-size: cover;
     background-repeat: no-repeat;
-    transform: rotateY(-180deg);
+
 
 }
 
@@ -82,9 +82,12 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     border-radius: 6px;
+    transform: rotateY(-180deg);
 
+
+    
 }
 
-/* .is-flipped {
+.is-flipped {
     transform: rotateY(-180deg);
-} */
+}
