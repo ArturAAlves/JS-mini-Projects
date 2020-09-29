@@ -57,7 +57,6 @@ body {
     transform-style: preserve-3d;
     cursor: pointer;
     position: relative;
-
 }
 
 .card-face {
@@ -68,13 +67,10 @@ body {
     backface-visibility: hidden;
 }
 
-
 .card-front {
     background-image: url("./img/cardback.png ");
     background-size: cover;
     background-repeat: no-repeat;
-    transform: rotateY(-180deg);
-
 }
 
 .card-back {
@@ -82,9 +78,13 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     border-radius: 6px;
-
+    transform: rotateY(-180deg);
 }
 
-/* .is-flipped {
+.flipped {
     transform: rotateY(-180deg);
-} */
+}
+
+.locked {
+    border: 5px solid black;
+}
