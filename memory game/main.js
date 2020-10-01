@@ -3,39 +3,44 @@ const images = [{ id: 0, img: "./img/img1.png" }, { id: 1, img: "./img/img2.png"
 const cardBack = document.querySelectorAll(".card-back")
 let cartaUm;
 let cartaDois;
-
+let clicks = 0
+const moves = document.querySelector(".moves")
 
 for (let i = 0; i < card.length; i++) {
     card[i].addEventListener("click", function () {
-        actionCard(i)
+        clicks += 1;
+        moves.innerHTML = clicks
+
+        console.log(clicks)
+        card[i].classList.add('flipped');
+
+        if (cartaUm != undefined && cartaDois == undefined)
+            cartaDois = cardBack[i].style.backgroundImage
+
+        if (cartaUm == undefined)
+            cartaUm = cardBack[i].style.backgroundImage
+
+        if (cartaUm == cartaDois) {
+            for (let u = 0; u < card.length; u++) {
+                if (hasClass(card[u], 'flipped')) {
+                    card[u].classList.add('locked')
+                }
+            }
+        } else if (cartaDois != undefined) {
+            for (let u = 0; u < card.length; u++) {
+                if (!hasClass(card[u], 'locked'))
+                    setTimeout(function () {
+                        card[u].classList.remove('flipped')
+                    }, 1000);
+            }
+        }
+        clearCards();
+
+
+
     })
 }
 
-function actionCard(colhoes) {
-    card[colhoes].classList.add('flipped');
-
-    if (cartaUm != undefined && cartaDois == undefined)
-        cartaDois = cardBack[colhoes].style.backgroundImage
-
-    if (cartaUm == undefined)
-        cartaUm = cardBack[colhoes].style.backgroundImage
-
-    if (cartaUm == cartaDois) {
-        for (let u = 0; u < card.length; u++) {
-            if (hasClass(card[u], 'flipped')) {
-                card[u].classList.add('locked')
-            }
-        }
-    } else if (cartaDois != undefined) {
-        for (let u = 0; u < card.length; u++) {
-            if (!hasClass(card[u], 'locked'))
-                setTimeout(function () {
-                    card[u].classList.remove('flipped')
-                }, 1000);
-        }
-    }
-    clearCards();
-}
 
 function clearCards() {
     if (cartaDois != undefined) {
@@ -44,57 +49,46 @@ function clearCards() {
     }
 }
 
+
 function hasClass(element, className) {
     return (' ' + element.className + ' ').indexOf(' ' + className + ' ') > -1;
 }
 
+function randomize() {
+    var numberStore = [0, 1, 2, 3, 4, 5, 6, 7, 8]
+    var novoArray = []
 
-var numberStore = [0, 1, 2, 3, 4, 5, 6, 7, 8]
-var novoArray = []
+    for (let i = numberStore.length; i >= 0; i--) {
+        var copyArray = numberStore
 
-for (let i = numberStore.length; i >= 0; i--) {
-    var copyArray = numberStore
-    // console.log (copyArray)
-    // console.log (numberStore)
-    var randomNumber = Math.floor(Math.random() * i);
-    novoArray.push(copyArray[randomNumber])
-    copyArray.splice(randomNumber, 1)
+        var randomNumber = Math.floor(Math.random() * i);
+        novoArray.push(copyArray[randomNumber])
+        copyArray.splice(randomNumber, 1)
+    }
+
+    for (let i = 0; i < cardBack.length; i++) {
+        cardBack[i].style.backgroundImage = `url("${images[novoArray[i]].img}")`
+        setTimeout(function () {
+            card[i].classList.add('flipped')
+        }, 500);
+
+        setTimeout(function () {
+            card[i].classList.remove('flipped')
+        }, 2000);
+    }
+
+
 }
 
-for (let i = 0; i < cardBack.length; i++) {
-    cardBack[i].style.backgroundImage = `url("${images[novoArray[i]].img}")`
+const novojogo = document.querySelector(".novojogo")
+novojogo.addEventListener("click", function () {
+    randomize()
 
-}
+})
 
 
-randomize()
-// function click() {
-//     for (let i = 0; i < card.length; i++) {
-//         var storeOne = ""
-//         var storeArray = []
-//         card[i].addEventListener("click", function () {
-//             card[i].classList.add('flipped');
-//             storeOne = cardBack[i].style.backgroundImage
-//             storeArray.push(storeOne)
-//             // console.log(storeOne)
-//             // console.log(storeArray)
-//             if (storeArray[0] == storeArray[1]) {
-//                 for (let u = 0; u < card.length; u++) {
-//                     if (hasClass(card[u], 'flipped')) {
-//                         card[u].classList.add('locked')
 
-//                     }
-//                 }
 
-//             } else if (storeArray[1] != undefined) {
-//                 for (let u = 0; u < card.length; u++) {
-//                     if (!hasClass(card[u], 'locked'))
-//                         setTimeout(function () {
-//                             card[u].classList.remove('flipped')
-//                         }, 1000);
-//                 }
-//             }
-//         })
-//     }
 
-// }
+
+
