@@ -83,7 +83,8 @@ body {
 }
 
 .locked {
-    border: 5px solid black;
+    border: 2px solid rgb(241, 93, 93);
+    border-radius: 5px;
 }
 .result-container{
     display: flex;

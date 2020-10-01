@@ -36,8 +36,6 @@ for (let i = 0; i < card.length; i++) {
         }
         clearCards();
 
-
-
     })
 }
 
@@ -80,9 +78,11 @@ function randomize() {
 
 }
 
+randomize()
+
 const novojogo = document.querySelector(".novojogo")
 novojogo.addEventListener("click", function () {
-    randomize()
+    location.reload();
 
 })
 
