@@ -46,12 +46,14 @@ var colorArray = ["#7FB069", "#FFFBBD", "#E6AA68", "#CA3C25", "#1D1A05"];
 window.addEventListener("mousemove", function (event) {
   mouse.x = event.x;
   mouse.y = event.y;
-  console.log(mouse.x, mouse.y);
+});
+window.addEventListener("touchstart", function (event) {
+  mouse.x = event.x;
+  mouse.y = event.y;
 });
 window.addEventListener("touchmove", function (event) {
   mouse.x = event.x;
   mouse.y = event.y;
-  console.log(mouse.x, mouse.y);
 });
 
 function circle(x, y, vX, vY, raio) {
@@ -96,7 +98,7 @@ function circle(x, y, vX, vY, raio) {
 
 var circleArray = [];
 
-for (var i = 0; i < 1000; i++) {
+for (var i = 0; i < 250; i++) {
   var raio = Math.random() * 10 + 1;
   var vX = Math.random() - 0.5;
   var vY = Math.random() - 0.5;
