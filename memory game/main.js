@@ -10,7 +10,7 @@ for (let i = 0; i < card.length; i++) {
     card[i].addEventListener("click", function () {
         clicks += 1;
         moves.innerHTML = clicks
-
+        debugger
         console.log(clicks)
         card[i].classList.add('flipped');
 
