@@ -53,7 +53,7 @@ var maxRaio = 50
 var minRaio = 5
 
 var colorArray =
-    ["#ffaa33", "#993333", "#aaaa22", "#ffaa33", "#ffaa33"
+    ["#7FB069", "#FFFBBD", "#E6AA68", "#CA3C25", "#1D1A05"
 
     ]
 
@@ -93,10 +93,10 @@ function circle(x, y, vX, vY, raio) {
         this.x += this.vX
         this.y += this.vY
 
-        if (mouse.x - this.x < 100 && mouse.x - this.x > -100 && mouse.y - this.y < 100 && mouse.y - this.y > -100) {
+        if (mouse.x - this.x < 50 && mouse.x - this.x > -50 && mouse.y - this.y < 50 && mouse.y - this.y > -50) {
 
             if (this.raio < maxRaio) {
-                this.raio += 1
+                this.raio += 3
             }
         }
 
@@ -104,17 +104,15 @@ function circle(x, y, vX, vY, raio) {
             this.raio -= 1
         }
 
-
-
         this.draw();
     }
 }
 var circleArray = [];
 
-for (let i = 0; i < 300; i++) {
-    var raio = Math.random()* 5
-    var vX = (Math.random() + 0.5) * 1
-    var vY = (Math.random() + -0.5) * 1
+for (let i = 0; i < 1000; i++) {
+    var raio = Math.random() * 10 +1
+    var vX = (Math.random() - 0.5)
+    var vY = (Math.random() - 0.5)
     var x = Math.random() * (window.innerWidth - raio * 2) + raio
     var y = Math.random() * (window.innerHeight - raio * 2) + raio
     circleArray.push(new circle(x, y, vX, vY, raio));
