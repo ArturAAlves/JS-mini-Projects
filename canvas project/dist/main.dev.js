@@ -100,8 +100,8 @@ var circleArray = [];
 
 for (var i = 0; i < 250; i++) {
   var raio = Math.random() * 10 + 1;
-  var vX = Math.random() - 0.5;
-  var vY = Math.random() - 0.5;
+  var vX = (Math.random() - 0.5) * 2;
+  var vY = (Math.random() - 0.5) * 2;
   var x = Math.random() * (window.innerWidth - raio * 2) + raio;
   var y = Math.random() * (window.innerHeight - raio * 2) + raio;
   circleArray.push(new circle(x, y, vX, vY, raio));

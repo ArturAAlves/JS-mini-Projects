@@ -66,14 +66,14 @@ window.addEventListener("mousemove", function (event) {
 window.addEventListener("touchstart", function (event) {
     mouse.x = event.x;
     mouse.y = event.y;
-  
+
 
 })
 
 window.addEventListener("touchmove", function (event) {
     mouse.x = event.x;
     mouse.y = event.y;
-  
+
 
 })
 
@@ -124,9 +124,9 @@ function circle(x, y, vX, vY, raio) {
 var circleArray = [];
 
 for (let i = 0; i < 250; i++) {
-    var raio = Math.random() * 10 +1
-    var vX = (Math.random() - 0.5)
-    var vY = (Math.random() - 0.5)
+    var raio = Math.random() * 10 + 1
+    var vX = (Math.random() - 0.5) * 2
+    var vY = (Math.random() - 0.5) * 2
     var x = Math.random() * (window.innerWidth - raio * 2) + raio
     var y = Math.random() * (window.innerHeight - raio * 2) + raio
     circleArray.push(new circle(x, y, vX, vY, raio));
