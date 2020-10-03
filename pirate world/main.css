@@ -1,0 +1,78 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: sans-serif;
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+    color: #16a4c4;
+}
+
+article, aside, figcaption, figure, footer, header, hgroup, main, nav, section, canvas {
+    display: block;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    margin-top: 10vh;
+    height: 150vh;
+    background: rgb(255, 255, 255);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.958420868347339) 0%, rgba(226, 251, 249, 1) 7%, rgba(197, 226, 224, 1) 18%, rgba(183, 214, 212, 1) 31%, rgba(187, 252, 240, 1) 42%, rgba(44, 111, 95, 1) 58%, rgba(36, 91, 75, 1) 77%, rgba(15, 41, 31, 1) 95%, rgba(9, 27, 19, 1) 100%);
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.fish-container {
+    opacity: 0;
+    position: absolute;
+    transform: rotate(290deg);
+    /* animation-name: jump;
+    animation-duration: 7s;
+    animation-iteration-count: infinite; */
+    animation: jump 7s infinite;
+}
+
+@keyframes jump {
+    70% {
+        top: 70vh;
+        opacity: 0%;
+        left: 10%;
+        transform: rotate(290deg);
+    }
+    71% {
+        opacity: 100%;
+    }
+    80% {
+        top: 40vh;
+        left: 20%;
+    }
+    83% {
+        opacity: 100%;
+    }
+ 
+    100% {
+        opacity: 0%;
+        top: 90vh;
+        left: 25%;
+        transform: rotate(430deg)
+    }
+}
+
+.fish {
+    height: 50px;
+}
