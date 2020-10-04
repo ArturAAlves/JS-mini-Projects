@@ -7,6 +7,8 @@ html {
     line-height: 1.15;
     -webkit-text-size-adjust: 100%;
     color: #16a4c4;
+    font-size: 62.5%;
+    overflow-x: hidden;
 }
 
 article, aside, figcaption, figure, footer, header, hgroup, main, nav, section, canvas {
@@ -27,6 +29,7 @@ body {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
+    font-size: 0.6rem;
 }
 
 .container {
@@ -35,6 +38,33 @@ body {
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.958420868347339) 0%, rgba(226, 251, 249, 1) 7%, rgba(197, 226, 224, 1) 18%, rgba(183, 214, 212, 1) 31%, rgba(187, 252, 240, 1) 42%, rgba(44, 111, 95, 1) 58%, rgba(36, 91, 75, 1) 77%, rgba(15, 41, 31, 1) 95%, rgba(9, 27, 19, 1) 100%);
     background-repeat: no-repeat;
     position: relative;
+}
+
+.sun {
+    position: absolute;
+    right: 5rem;
+    top: 5rem;
+    width: 15rem;
+    height: 15rem;
+    background-color: #FFDE00;
+    border-radius: 50%;
+    box-shadow: 0 0 25px 20px #FFDE00, 0 0 25px 40px #FFDE0040, 0 0 25px 60px #FFDE0020, 0 0 25px 80px #FFDE0010, 0 0 25px 100px #FFDE0000, 0 0 40px 100px #FFDE0010;
+    animation: sunrise 2s infinite linear forwards, rays 2s 2s infinite linear;
+}
+
+@keyframes sunrise {
+    0% {
+        box-shadow: none;
+    }
+}
+
+@keyframes rays {
+    0% {
+        box-shadow: 0 0 5px 0 #FFDE0080, 0 0 5px 20px #FFDE0080, 0 0 5px 40px #FFDE0040, 0 0 5px 60px #FFDE0020, 0 0 5px 80px #FFDE0010, 0 0 40px 100px #FFDE0010;
+    }
+    100% {
+        box-shadow: 0 0 5px 20px #FFDE0080, 0 0 5px 40px #FFDE0040, 0 0 5px 60px #FFDE0020, 0 0 5px 80px #FFDE0010, 0 0 0 100px #FFDE0000, 0 0 40px 100px #FFDE0010;
+    }
 }
 
 .fish-container {
@@ -73,19 +103,20 @@ body {
 }
 
 .fish {
-    height: 50px;
+    height: 2.5rem;
 }
 
 .cardume-container {
     position: absolute;
-    bottom: 10%;
+    bottom: 20%;
     flex-wrap: wrap;
-    width: 300px;
-    animation: cardume 30s infinite;
+    width: 30rem;
+    animation: cardume 100s infinite;
 }
 
 .cardume {
-    height: 25px;
+    height: 1.5rem;
+    opacity: 0.7;
 }
 
 .hide {
@@ -95,10 +126,10 @@ body {
 @keyframes cardume {
     0% {
         left: -20%;
-        transform: rotate(1deg)scale(0.99);
+        transform: rotate(1deg)scale(1.2);
     }
     10% {
-        transform: rotate(-1deg)scale(1.01);
+        transform: rotate(-1deg)scale(1.1);
     }
     15% {
         transform: rotate(1deg)scale(0.99);
@@ -107,15 +138,15 @@ body {
         transform: rotate(-1deg);
     }
     25% {
-        transform: scale(1.01);
+        transform: scale(1.01)scale(0.9);
     }
     49% {
         left: 115%;
-        transform: rotate(0deg);
+        transform: rotate(0deg)scale(0.8);
     }
     50% {
         left: 120%;
-        transform: rotateY(180deg);
+        transform: rotateY(180deg)scale(1);
     }
     90% {
         left: -50%;
@@ -129,13 +160,13 @@ body {
 
 .boat-container {
     position: absolute;
-    top: 30%;
+    top: 20%;
     left: 0;
-    animation: boat 10s infinite;
+    animation: boat 100s infinite;
 }
 
 .boat {
-    height: 250px;
+    height: 50rem;
     transform: rotateY(180deg);
 }
 
@@ -144,17 +175,90 @@ body {
         left: -20%;
     }
     10% {
-        transform: skew(1deg,1deg);
+        transform: skew(1deg, 1deg)rotate(0deg);
+    }
+    15% {
+        transform: rotate(5deg);
     }
     20% {
-        transform:  skew(2deg,5deg);
+        transform: rotate(-10deg);
     }
     30% {
-        transform:  skew(0deg,5deg);
+        transform: skew(0deg, 5deg) rotate(0deg);
     }
-
-
+    40% {
+        transform: rotate(-5deg);
+    }
+    50% {
+        transform: rotate(10deg);
+    }
+    60% {
+        transform: rotate(-5deg);
+    }
+    70% {
+        transform: rotate(5deg);
+    }
+    80% {
+        transform: rotate(-10deg);
+    }
+    90% {
+        transform: rotate(5deg);
+    }
     100% {
         left: 120%;
+    }
+}
+
+
+
+.bubble1 {
+    height: 5rem;
+    opacity: 0.7;
+}
+
+.bubble2 {
+    height: 5rem;
+    opacity: 1;
+}
+
+.bubble3 {
+    height: 5rem;
+    opacity: 0.7;
+}
+
+.bubble4 {
+    height: 5rem;
+    opacity: 0.7;
+}
+
+.bubble5 {
+    height: 5rem;
+    opacity: 0.7;
+}
+
+
+.bubble1-container {
+    position: absolute;
+    bottom: 0;
+    animation: bubbles 10s linear infinite;
+}
+
+.bubble2-container {
+    position: absolute;
+    bottom: 5rem;
+    left: 15rem;
+    animation: bubbles 10s linear infinite;
+}
+
+
+
+
+
+
+@keyframes bubbles {
+    100% {
+        transform: rotate(50deg) scale(0.8);
+        bottom: 50rem;
+        opacity: 0;
     }
 }
