@@ -158,58 +158,97 @@ body {
     }
 }
 
+.fish-bubble-container {
+    position: absolute;
+    bottom: 20%;
+    left:15px;
+    animation: fish-bubbles 100s infinite;
+}
+
+.fish-bubble {
+    height: 5rem;
+    opacity: 0.7;
+}
+
+@keyframes fish-bubbles {
+    0% {
+        left: 0%;
+    }
+    10% {}
+    15% {}
+    20% {}
+    25% {}
+    49% {
+        left: 115%;
+    }
+    50% {
+        left: 120%;
+    }
+    90% {
+        left: -50%;
+        transform: rotateY(180deg);
+    }
+    100% {
+        left: 0%;
+        transform: rotateY(0deg);
+    }
+}
+
 .boat-container {
     position: absolute;
-    top: 20%;
+    z-index: 0;
+    top: 15%;
     left: 0;
-    animation: boat 100s infinite;
+    animation: boat 60s infinite linear;
 }
 
 .boat {
-    height: 50rem;
+    height: 60rem;
     transform: rotateY(180deg);
 }
 
 @keyframes boat {
     0% {
-        left: -20%;
+        left: -33%;
     }
     10% {
-        transform: skew(1deg, 1deg)rotate(0deg);
+        transform: rotate(6deg)
     }
     15% {
-        transform: rotate(5deg);
+        transform: rotate(0deg)
     }
-    20% {
-        transform: rotate(-10deg);
+    25% {
+        transform: rotate(-10deg)
     }
     30% {
-        transform: skew(0deg, 5deg) rotate(0deg);
+        transform: skew(0deg, 5deg) rotate(-10deg) translateY(-60px);
     }
-    40% {
-        transform: rotate(-5deg);
-    }
+    /* 40% {
+        transform: rotate(-5deg) translateY(-50px);
+    } */
     50% {
-        transform: rotate(10deg);
+        transform: rotate(10deg) rotate(0deg)translateY(-50px);
     }
     60% {
-        transform: rotate(-5deg);
+        transform: rotate(-5deg) translateY(-70px);
     }
     70% {
-        transform: rotate(5deg);
+        transform: rotate(5deg) translateY(-60px);
     }
     80% {
-        transform: rotate(-10deg);
+        transform: rotate(-10deg) translateY(-90px);
     }
     90% {
         transform: rotate(5deg);
     }
     100% {
-        left: 120%;
+        left: 100%;
     }
 }
 
-
+.container-bubbles {
+    overflow: hidden;
+}
 
 .bubble1 {
     height: 5rem;
@@ -217,13 +256,14 @@ body {
 }
 
 .bubble2 {
-    height: 5rem;
-    opacity: 1;
+    height: 3rem;
+    opacity: 0.8;
+    transform: rotate(60deg);
 }
 
 .bubble3 {
-    height: 5rem;
-    opacity: 0.7;
+    height: 2rem;
+    opacity: 0.6;
 }
 
 .bubble4 {
@@ -234,31 +274,108 @@ body {
 .bubble5 {
     height: 5rem;
     opacity: 0.7;
+    transform: rotate(120deg);
 }
-
 
 .bubble1-container {
     position: absolute;
-    bottom: 0;
-    animation: bubbles 10s linear infinite;
+    bottom: 1;
+    animation: bubbles1 10s linear infinite;
 }
 
 .bubble2-container {
     position: absolute;
-    bottom: 5rem;
-    left: 15rem;
-    animation: bubbles 10s linear infinite;
+    bottom: 1rem;
+    left: 30rem;
+    animation: bubbles2 30s linear infinite;
 }
 
+.bubble3-container {
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    animation: bubbles3 15s linear infinite;
+}
 
+.bubble4-container {
+    position: absolute;
+    bottom: 1rem;
+    left: 70%;
+    animation: bubbles3 35s linear infinite;
+}
 
+.bubble5-container {
+    position: absolute;
+    bottom: 1rem;
+    left: 85%;
+    animation: bubbles2 20s linear infinite;
+}
 
-
-
-@keyframes bubbles {
+@keyframes bubbles1 {
     100% {
         transform: rotate(50deg) scale(0.8);
         bottom: 50rem;
         opacity: 0;
+    }
+}
+
+@keyframes bubbles2 {
+    80% {
+        bottom: 50rem;
+    }
+    100% {
+        transform: rotate(50deg) scale(0.8);
+        bottom: 50rem;
+        opacity: 0;
+    }
+}
+
+@keyframes bubbles3 {
+    0% {
+        bottom: 1rem;
+        opacity: 0.1;
+    }
+    50% {
+        bottom: 30rem;
+        opacity: 1;
+    }
+    100% {
+        transform: rotate(50deg) scale(0.8);
+        bottom: 50rem;
+        opacity: 0;
+    }
+}
+
+.wave-one {
+    position: absolute;
+    z-index: 10;
+    width: 150%;
+    bottom: 35%;
+    animation: wave1 30s ease infinite;
+}
+
+.wave-two {
+    position: absolute;
+    width: 150%;
+    bottom: 35%;
+    animation: wave1 20s ease infinite;
+}
+
+.wave-three {
+    position: absolute;
+    width: 150%;
+    bottom: 30%;
+    animation: wave1 10s linear infinite;
+}
+
+@keyframes wave1 {
+    0% {
+        transform: translateX(-800px);
+    }
+    50% {
+        transform: translateX(0px);
+    }
+    100% {
+        transform: translateX(-800px);
     }
 }
