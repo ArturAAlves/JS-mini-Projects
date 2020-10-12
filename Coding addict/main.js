@@ -1,17 +1,192 @@
-//Events
-//addEvenListener()
-//What event, what to do
+const container = document.querySelector(".contain")
+const text = document.querySelector(".text")
+const button = document.querySelector(".btn")
 
-const container = document.querySelector(".container")
-container.addEventListener("click", contains)
-function contains() {
-    const hasClass = container.classList.contains("gray")
-    if (hasClass) {
-        container.classList.remove("gray")
-    } else {
-        container.classList.add("gray")
-    }
+
+button.addEventListener("click", addtext)
+
+
+function addtext(e) {
+    e.preventDefault()
+    let content = `<p> Hello world </p>`
+    console.log(content)
+
+    container.append(content)
 }
+
+
+
+///allows selecting dynamic elements
+//event propagation - order the events are fired
+//event bubbling - clicked element first then bubbles up ( default )
+//event capturing - fires at the root and fires until reaches target
+
+
+// const container = document.querySelector(".container")
+// const list = document.querySelector(".list")
+
+
+// function eventbubbling(e) {
+//     // e.preventDefault()
+//     // console.log(e.currentTarget)
+
+//     console.log(e.target.tagName)
+//     if (e.target.tagName == "A") {
+//         console.log("hello")
+//     } else {
+//         console.log("f off")
+
+//     }
+
+//     // if (e.target.classList.contains("link")) {
+//     //     console.log("tem link")
+//     // }else{
+//     //     console.log("nao tem")
+//     // }
+
+// }
+
+// function stopPropagation(e) {
+//     // console.log("you clickcing an a list")
+//     console.log(e.currentTarget)
+//     // console.log(e.target)
+//     // e.stopPropagation()
+
+// }
+
+// container.addEventListener("click", stopPropagation, { capture: true })
+// list.addEventListener("click", stopPropagation, { capture: true })
+// window.addEventListener("click", stopPropagation, { capture: true })
+// document.addEventListener("click", stopPropagation, { capture: true })
+
+
+
+
+
+
+
+
+// curentTarget - always referes to the element to wich the event handler has been attached
+// target - identifies the current event onde o evento acontece em especifico 
+
+
+// const btn = document.querySelectorAll(".btn")
+// const btn2 = document.querySelector(".btn2")
+
+// btn.forEach(function (btn) {
+//     btn.addEventListener("click", function (e) {
+
+//         console.log(e.currentTarget)
+//     })
+// });
+
+
+// btn2.addEventListener("click", function (e) {
+//     console.log(e.target)
+// })
+
+
+// event oject argument e, evt
+// info about triggered event 
+// event.tye 
+// event.currentTarget
+// this keyword
+// preventDefault() - prevents default behavior 
+
+// const textarea = document.querySelector(".text")
+
+
+// textarea.addEventListener("keyup", (e) => {
+//     console.log(this)
+// })
+
+
+
+
+
+
+
+
+
+//EVENTS
+//click - fires after full action ocurs
+// mousedown - button is pressed
+// mouseup - button is released 
+// mouseenter - move into an element
+// mouseleave - mouve out an element 
+//keypress - when a key is pressed
+//keydown - when key is down
+//keyup - when key is released
+
+
+// const button = document.querySelector(".text")
+
+// // button.addEventListener("keydown", function () {
+// //     console.log("hello")
+// // })
+// // button.addEventListener("keypress", function () {
+// //     console.log("hello")
+// // })
+
+// button.addEventListener("keyup", function () {
+//     console.log(button.value)
+// })
+
+
+
+
+
+
+
+
+
+
+// button.addEventListener("click", function () {
+//     console.log("hello")
+// })
+
+// button.addEventListener("mousedown", function () {
+//     console.log("mousedown")
+// })
+
+// button.addEventListener("mouseup", function () {
+//     console.log("mouseup")
+// })
+
+// button.addEventListener("mouseenter", function () {
+//     console.log("mouseenter")
+//     button.style.backgroundColor = "blue"
+// })
+
+// button.addEventListener("mouseleave", function () {
+//     console.log("mouseleave")
+//     button.style.backgroundColor = ""
+// })
+
+
+
+
+
+
+
+
+
+
+// //Events
+// //addEvenListener()
+// //What event, what to do
+
+// const container = document.querySelector(".container")
+// container.addEventListener("click", contains)
+// function contains() {
+
+//     const hasClass = container.classList.contains("gray")
+//     if (hasClass) {
+//         container.classList.remove("gray")
+//     } else {
+//         container.classList.add("gray")
+//     }
+// }
 
 
 
