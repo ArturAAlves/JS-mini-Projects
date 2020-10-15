@@ -1,0 +1,132 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+  color: black;
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0px;
+  padding: 0px;
+}
+
+article, aside, figcaption, figure, footer, header, hgroup, main, nav, section, canvas {
+  display: block;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.container {
+  background-image: url(./img/deborah-cortelazzi-gREquCUXQLI-unsplash.jpg);
+  min-height: 100vh;
+  min-width: 100vw;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0px;
+  padding: 0px;
+  position: relative;
+}
+
+.modal {
+  width: 40rem;
+  height: 20rem;
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  -webkit-box-shadow: 0px 0px 42px -5px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 42px -5px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 42px -5px rgba(0, 0, 0, 0.75);
+  border: none;
+}
+
+.tittle {
+  font-size: 5rem;
+  color: rgb(32, 32, 32);
+}
+
+.btn {
+  color: white;
+  background-color: rgb(100, 158, 185);
+  border: 0.1rem solid rgb(14, 95, 88);
+  padding: 0.8rem;
+  border-radius: 0.7rem;
+  transform: translateY(-1rem);
+  cursor: pointer;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.btn:hover {
+  background-color: rgb(99, 171, 204);
+}
+
+.modal-container {
+  display: none;
+  position: absolute;
+  background-color: rgba(0, 0, 255, 0.411);
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-container-active {
+  display: flex;
+}
+
+.text-container {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  width: 35rem;
+  height: 25rem;
+  background-color: rgb(255, 255, 255);
+  border-radius: 0.7rem;
+  padding: 2rem;
+  z-index: 1;
+  color: black;
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+.close {
+  position: absolute;
+  top: 3rem;
+  right: 3rem;
+  z-index: 2;
+  color: red;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.close:hover {
+  animation: rotate 1s;
+}
+
+@keyframes rotate {
+  0% {}
+  100% {
+    transform: rotate(760deg);
+  }
+}

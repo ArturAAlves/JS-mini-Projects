@@ -1,18 +1,94 @@
-const container = document.querySelector(".contain")
-const text = document.querySelector(".text")
-const button = document.querySelector(".btn")
+//Json.stringify(), JSON.parse()
 
+// const friends = ["john", "peter", "bob"]
 
-button.addEventListener("click", addtext)
+// localStorage.setItem("friends", JSON.stringify(friends))
+// console.log(localStorage.getItem("friends"))
 
+// const names = JSON.parse(localStorage.getItem("friends"))
+// console.log(names[0])
 
-function addtext(e) {
-    e.preventDefault()
-    let content = `<p> Hello world </p>`
-    console.log(content)
+let fruits;
 
-    container.append(content)
+if (localStorage.getItem("fruits")) {
+    fruits = JSON.parse(localStorage.getItem("fruits"))
+} else {
+    fruits = []
 }
+
+console.log(fruits)
+fruits.push("Apple")
+localStorage.setItem("fruits", JSON.stringify(fruits))
+
+localStorage.clear()
+sessionStorage.clear()
+
+
+//WebStorage Api - provided By browser
+//Session Storage , local storage
+//SetItem , getItem , removeItem, clear
+
+
+// localStorage.setItem("name", "john")
+// sessionStorage.setItem("name", "john")
+
+// let name = console.log(localStorage.getItem("name"))
+// localStorage.clear()
+// sessionStorage.clear()
+
+//subtmit event Listner
+//prevent default
+///how to get a value
+
+
+// const form = document.querySelector(".form")
+// const name = document.querySelector(".name")
+// const password = document.querySelector(".password")
+
+
+
+// form.addEventListener("submit", function (e) {
+//     e.preventDefault()
+//     console.log(name.value)
+//     console.log(password.value)
+//     console.log("submited")
+
+//     name.value = ""
+//     password.value = ""
+// })
+
+
+
+
+
+// const container = document.querySelector(".contain")
+// const text = document.querySelector(".text")
+// const button = document.querySelector(".btn")
+
+
+// button.addEventListener("click", addtext)
+// container.addEventListener("click", remove)
+
+// function addtext(e) {
+//     e.preventDefault()
+//     let p = document.createElement("p")
+//     p.classList.add("red")
+//     p.innerHTML = `Hello world`
+//     container.append(p)
+// }
+
+
+
+
+
+// function remove(e) {
+//     e.stopPropagation()
+
+//     if (e.target.classList.contains("red")) {
+//         console.log(e.target.innerHTML)
+//     }
+// }
+
 
 
 
