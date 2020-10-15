@@ -1,0 +1,178 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+  color: black;
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+
+article, aside, figcaption, figure, footer, header, hgroup, main, nav, section, canvas {
+  display: block;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.nav-bar {
+  height: 7vh;
+  display: flex;
+  justify-content: center;
+}
+
+.nav {
+  margin-top: 3vh;
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.menu-mobile {
+  display: none;
+  position: absolute;
+  top: 5rem;
+  right: 5rem;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.menu-mobile-active {
+  animation: rotate 1s;
+}
+
+@keyframes rotate {
+  0% {}
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.bar {
+  margin: 0.2rem;
+  width: 3rem;
+  height: 0.5rem;
+  background-color: black;
+}
+
+.bar1-active {
+  width: 1rem;
+  animation: bar1 1.5s;
+}
+
+.bar2-active {
+  width: 2rem;
+  background-color: black;
+  animation: bar2 1.5s;
+}
+
+@keyframes bar1 {
+  0% {
+    width: 3rem;
+  }
+  100% {
+    width: 1rem;
+  }
+}
+
+@keyframes bar2 {
+  0% {
+    width: 3rem;
+  }
+  100% {
+    width: 2rem;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .nav-bar {
+    display: none;
+  }
+  .menu-mobile {
+    display: flex;
+  }
+  .nav-bar {
+    display: flex;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.226);
+    transform: translatex(1000px);
+  }
+  .nav-bar-remove {
+    animation: menuTransitionOut 1s;
+  }
+  .nav {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: space-evenly;
+    align-content: center;
+  }
+  .nav-bar-show {
+    transform: translatex(0px);
+    animation: menuTransition 1s;
+  }
+  @keyframes menuTransition {
+    0% {
+      transform: translatex(1000px);
+    }
+    100% {
+      transform: translatex(0px);
+    }
+  }
+  @keyframes menuTransitionOut {
+    0% {
+      transform: translatex(0px);
+    }
+    100% {
+      transform: translatex(1000px);
+    }
+  }
+  .bar1-remove {
+    width: 3rem;
+    animation: removebar1 1.5s;
+  }
+  .bar2-remove {
+    width: 3rem;
+    background-color: black;
+    animation: removebar2 1.5s;
+  }
+  @keyframes removebar1 {
+    0% {
+      width: 1rem;
+    }
+    100% {
+      width: 3rem;
+    }
+  }
+  @keyframes removebar2 {
+    0% {
+      width: 2rem;
+    }
+    100% {
+      width: 3rem;
+    }
+  }
+  /*
+  .menu-mobile-remove {
+    animation: rotateremove 1s;
+  }
+  @keyframes rotateremove {
+    0% {
+      transform: rotate(0);
+    }
+    100% {
+      transform: rotate(-7200deg);
+    }
+  } */
+}

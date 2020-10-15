@@ -1,0 +1,65 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: sans-serif;
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+  overflow-x: hidden;
+  color: #16a4c4;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
+  display: block;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-content: center;
+}
+
+.container h1 {
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.number {
+  font-size: 6rem;
+}
+
+.container-btn {
+  display: flex;
+  justify-content: center;
+}
+
+.btn {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  border: 1px solid black;
+  margin: 1rem;
+}
+
+.btn:hover {
+  background-color: rgba(0, 0, 0, 0.205);
+  color: white;
+}
