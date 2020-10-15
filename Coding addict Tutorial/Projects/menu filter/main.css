@@ -24,3 +24,101 @@ ul {
 a:hover {
   text-decoration: none;
 }
+
+.main-container {
+  border: 1px solid black;
+  text-align: center;
+  width: 90vw;
+  margin: auto;
+  margin-top: 10vh;
+}
+
+.container-tittle {
+  margin-bottom: 5rem;
+}
+
+.tittle {
+  font-size: 4rem;
+  font-weight: 700;
+}
+
+.tittle-underline {
+  width: 6rem;
+  height: 0.3rem;
+  background-color: goldenrod;
+  margin: auto;
+  border-radius: 1rem;
+}
+
+.container-menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.menu-content-container {
+  display: flex;
+}
+
+.menu-item-container {
+  width: 56rem;
+  height: 15rem;
+  display: flex;
+  margin: 2rem;
+}
+
+.menu-item-img {
+  width: 20rem;
+  height: 15rem;
+  border-radius: 1rem;
+  background-size: contain;
+  border: 1px solid goldenrod;
+}
+
+.menu-item-text {
+  height: 15rem;
+  margin: 0 2rem;
+}
+
+.menu-item-tittle-container {
+  height: 1rem;
+  transform: translateY(-2rem);
+}
+
+.menu-item-tittle {
+  font-size: 2rem;
+  text-align: left;
+}
+
+.menu-item-price {
+  float: right;
+  color: goldenrod;
+}
+
+.menu-item-description {
+  height: 14rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+  text-align: left;
+  line-height: 2rem;
+  color: rgb(92, 92, 92);
+}
+
+.buttons {
+  width: 40rem;
+  margin: auto;
+  margin-top: 3rem;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.btn {
+  cursor: pointer;
+  border: 0.1rem solid goldenrod;
+  padding: 1rem 2rem;
+  background-color: white;
+  border-radius: 1rem;
+  color: goldenrod;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
