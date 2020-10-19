@@ -26,10 +26,7 @@ a:hover {
 }
 
 .main-container {
-  border: 1px solid black;
   text-align: center;
-  width: 90vw;
-  margin: auto;
   margin-top: 10vh;
 }
 
@@ -38,22 +35,23 @@ a:hover {
 }
 
 .tittle {
-  font-size: 4rem;
+  font-size: calc(4vw + 1rem);
   font-weight: 700;
+  margin: 0;
 }
 
 .tittle-underline {
-  width: 6rem;
-  height: 0.3rem;
+  width: 30rem;
+  height: 0.1rem;
   background-color: goldenrod;
   margin: auto;
   border-radius: 1rem;
 }
 
-.container-menu {
+.menu-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  margin-left: 15vw
 }
 
 .menu-content-container {
@@ -61,23 +59,28 @@ a:hover {
 }
 
 .menu-item-container {
-  width: 56rem;
+  width: 50rem;
   height: 15rem;
   display: flex;
   margin: 2rem;
 }
 
+.menu-img-container {
+  width: 20rem;
+}
+
 .menu-item-img {
   width: 20rem;
-  height: 15rem;
+  max-height: 15rem;
   border-radius: 1rem;
-  background-size: contain;
-  border: 1px solid goldenrod;
+  border: 0.1rem solid goldenrod;
+  background-size: cover;
 }
 
 .menu-item-text {
   height: 15rem;
-  margin: 0 2rem;
+  width: 25rem;
+  margin-left: 2rem;
 }
 
 .menu-item-tittle-container {
@@ -105,11 +108,10 @@ a:hover {
 }
 
 .buttons {
-  width: 40rem;
   margin: auto;
   margin-top: 3rem;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
 }
 
 .btn {
@@ -121,4 +123,5 @@ a:hover {
   color: goldenrod;
   font-size: 1.5rem;
   font-weight: 500;
+  margin: 1rem;
 }
