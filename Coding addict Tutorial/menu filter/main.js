@@ -84,10 +84,41 @@ window.addEventListener("DOMContentLoaded", function () {
 
 })
 
-// Utilizamos o metodo map para "correr" os items do array e para cada interaçao ou "volta", fazer um print dentro da template string , criando depois a atribuiçao
-// ao container de html
-function createMenu(list) {
-    const menu = list.map(function (item) {
+
+function createBtn() {
+    const list = menuList.reduce(function (nList, item) {
+        if (!nList.includes(item.type)) {
+            nList.push(item.type)
+        }
+        return nList
+    }, ["all"])
+    const newPrint = list.map(function (btn) {
+        return ` <button class="btn" data-id=${btn}>${btn}</button>`
+    }).join("")
+    btnContainer.innerHTML = newPrint
+}
+
+
+function filter() {
+    btnContainer.addEventListener("click", function (btns) {
+        const btn = btns.target.dataset.id
+        if (btn != undefined) {
+            const filter = menuList.filter(function (item) {
+                if (item.type == btn) {
+                    return item
+                } else if (btn == "all") {
+                    return item
+                }
+            })
+            createMenu(filter)
+        }
+    })
+
+}
+
+
+function createMenu(menu) {
+    const outputMenu = menu.map(function (item) {
         return `<div class="menu-item-container">
             <div class="menu-img-container">
             <img class="menu-item-img" src=${item.imgUrl} alt="">
@@ -105,46 +136,76 @@ function createMenu(list) {
             </div>
             </div>
         </div>`
-    })
-    menuContainer.innerHTML = menu.join("")
+    }).join("")
+    menuContainer.innerHTML = outputMenu
 }
 
 
-// Reduzimos o array e retiramos os elementos do .type unicos e criamos um novo array utlizando o metodo reduce, de seguida fazemos o print , utlizando o metodo map
-function createBtn() {
-    const btns = menuList.reduce(function (btnList, items) {
-        if (!btnList.includes(items.type)) {
-            btnList.push(items.type)
-        }
-        return btnList
-    }, ["all"])
-    const printBtn = btns.map(function (item) {
-        return `<button class="btn" data-id=${item}>${item}</button>`
-    })
-    btnContainer.innerHTML = printBtn.join("")
-}
 
 
-//adicionamos um listner aos butoes que foram criados dinamicamente na funçao anteriores, 
-//este listener vai ter um target ao dataset que foi atribuido e este servirá para "filtrar" elmentos do array que contem o "type" igual ao dataset do butao.
-//Caso o butao selecionado seja "all", faz o print de todos os items do array
-function filter() {
-    const btnList = document.querySelectorAll(".btn")
-    btnList.forEach(function (btns) {
-        btns.addEventListener("click", function (btn) {
-            let button = btn.currentTarget.dataset.id
-            const filter = menuList.filter(function (item) {
-                if (item.type == button) {
-                    return item
-                }
-                else if (button == "all") {
-                    return item
-                }
-            })
-            createMenu(filter)
-        })
-    });
-}
+
+
+// // Utilizamos o metodo map para "correr" os items do array e para cada interaçao ou "volta", fazer um print dentro da template string , criando depois a atribuiçao
+// // ao container de html
+// function createMenu(list) {
+//     const menu = list.map(function (item) {
+//         return `<div class="menu-item-container">
+//             <div class="menu-img-container">
+//             <img class="menu-item-img" src=${item.imgUrl} alt="">
+//             </div>
+//             <div class="menu-content-container">
+//             <div class="menu-item-text">
+//                 <div class="menu-item-tittle-container">
+//                 <p class="menu-item-tittle"><span>${item.name}</span> <span class="menu-item-price">$${item.price}</span>
+//                 </p>
+//                 <div class="menu-item-tittle-underline"></div>
+//                 </div>
+//                 <div class="menu-item-description">
+//                 <p>${item.description}</p>
+//                 </div>
+//             </div>
+//             </div>
+//         </div>`
+//     })
+//     menuContainer.innerHTML = menu.join("")
+// }
+
+
+// // Reduzimos o array e retiramos os elementos do .type unicos e criamos um novo array utlizando o metodo reduce, de seguida fazemos o print , utlizando o metodo map
+// function createBtn() {
+//     const btns = menuList.reduce(function (btnList, items) {
+//         if (!btnList.includes(items.type)) {
+//             btnList.push(items.type)
+//         }
+//         return btnList
+//     }, ["all"])
+//     const printBtn = btns.map(function (item) {
+//         return `<button class="btn" data-id=${item}>${item}</button>`
+//     })
+//     btnContainer.innerHTML = printBtn.join("")
+// }
+
+
+// //adicionamos um listner aos butoes que foram criados dinamicamente na funçao anteriores, 
+// //este listener vai ter um target ao dataset que foi atribuido e este servirá para "filtrar" elmentos do array que contem o "type" igual ao dataset do butao.
+// //Caso o butao selecionado seja "all", faz o print de todos os items do array
+// function filter() {
+//     const btnList = document.querySelectorAll(".btn")
+//     btnList.forEach(function (btns) {
+//         btns.addEventListener("click", function (btn) {
+//             let button = btn.currentTarget.dataset.id
+//             const filter = menuList.filter(function (item) {
+//                 if (item.type == button) {
+//                     return item
+//                 }
+//                 else if (button == "all") {
+//                     return item
+//                 }
+//             })
+//             createMenu(filter)
+//         })
+//     });
+// }
 
 
 
