@@ -76,12 +76,10 @@ const menuList = [
 const menuContainer = document.querySelector(".menu-container")
 const btnContainer = document.querySelector(".btn-container")
 
-
 window.addEventListener("DOMContentLoaded", function () {
     createMenu(menuList)
     createBtn()
     filter()
-
 })
 
 
