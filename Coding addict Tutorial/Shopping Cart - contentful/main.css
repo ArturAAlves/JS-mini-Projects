@@ -1,6 +1,7 @@
 :root {
   --main: #BC4C2A;
   --special: #363636;
+  --secoundblack: #111111;
 }
 
 *, *::before, *::after {
@@ -46,9 +47,17 @@ a {
 
 /* header */
 
-#home {
+/* #home {
   display: none;
 }
+
+.items-main-container {
+  display: none !important;
+}
+
+.store-accessories-container {
+  display: none !important;
+} */
 
 .image-container {
   position: relative;
@@ -114,7 +123,7 @@ a {
   margin-right: 5rem;
   color: var(--special);
   text-transform: uppercase;
-  font-weight: 500;
+  font-weight: 400;
   white-space: nowrap;
 }
 
@@ -187,14 +196,6 @@ a {
   font-size: 3rem;
 }
 
-#footer {
-  background-color: rgb(61, 70, 109);
-  color: white;
-  height: 20vh;
-  align-items: center;
-  font-size: 2.2rem;
-}
-
 .nav-container {
   z-index: 999;
   display: flex;
@@ -214,9 +215,149 @@ a {
   padding-bottom: 1rem;
 }
 
+/* cart */
+
+/* 
+.cart-global-container {
+  position: absolute;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.507);
+} */
+
+.cart-container {
+  position: absolute;
+  z-index: 999;
+  width: 35rem;
+  height: 100vh;
+  right: 0;
+  top: 0;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.cart-box {
+  width: 33.333%;
+  text-align: center;
+}
+
+.cart-container-head {
+  width: 100%;
+  height: 10%;
+  background-color: #111111;
+  font-size: 2.5rem;
+  font-weight: 400;
+  letter-spacing: 0.1rem;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.cart-container-body {
+  height: 60%;
+  width: 100%;
+  overflow-y: scroll;
+}
+
+.cart-item {
+  height: 15rem;
+  display: flex;
+  padding: 3rem 3rem;
+}
+
+.cart-item-img {
+  height: 100%;
+  width: 35%;
+  background-image: url(./img/purse-blue.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-right: 1rem;
+}
+
+.cart-item-info {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 1.5rem;
+}
+
+.cart-item-name {
+  margin-top: 1rem;
+}
+
+.cart-item-amount {
+  width: 4rem;
+}
+
+.cart-container-footer {
+  height: 5rem;
+}
+
+.cart-item-list {
+  background-color: white;
+}
+
+.cart-subtotal {
+  padding-top: 2rem;
+  padding-left: 1.8rem;
+  font-size: 1.6rem;
+  font-weight: 400;
+  letter-spacing: 0.1rem;
+}
+
+.Subtotal-text {
+  margin-bottom: 0.5rem;
+}
+
+.cart-container-btn {
+  position: absolute;
+  bottom: 5rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cart-btn {
+  width: 80%;
+  padding: 1.5rem;
+  text-align: center;
+  font-size: 1.4rem;
+  font-weight: 400;
+  border: 1px solid var(--main);
+  letter-spacing: 0.3rem;
+  color: white;
+  cursor: pointer;
+  border: 0.1rem solid var(--main) !important;
+  background-color: var(--main);
+}
+
+/* .cart-btn:hover {
+  color: var(--main);
+  background-color: white;
+  animation: fadeIn 1s;
+} */
+
 /* main */
 
 /* <!-- items --> */
+
+.best-seller {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 15rem;
+  height: 4rem;
+  background-color: var(--main);
+  color: white;
+  font-size: 1.5rem;
+}
 
 .items-main-container {
   background-color: white;
@@ -278,7 +419,8 @@ a {
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  font-size: 1.7rem;
+  font-size: 1.6rem;
+  font-weight: 400;
   text-transform: capitalize;
 }
 
@@ -290,11 +432,10 @@ a {
 }
 
 .item-details {
+  z-index: 500;
+  border: none;
   font-size: 1.3rem;
   letter-spacing: 0.2rem;
-}
-
-.item-details {
   display: none;
   position: absolute;
   bottom: 20%;
@@ -307,7 +448,8 @@ a {
   transform: translateX(50%);
   background-color: white;
   cursor: pointer;
-  transition: ease-in;
+  animation: details 300ms;
+  outline: none !important;
 }
 
 .item-info {
@@ -341,7 +483,6 @@ a {
 
 .store-accessories-container {
   height: 120vh;
-  margin-bottom: 10vh;
   overflow: hidden;
 }
 
@@ -351,7 +492,7 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: antiquewhite;
+  background-color: #F5F6F3;
 }
 
 .acessoires-block-item {
@@ -370,6 +511,12 @@ a {
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
+  transition-duration: 0.5s;
+}
+
+.acessories-img:hover {
+  transform: scale(1.1);
+  transition-duration: 0.5s;
 }
 
 .acessories-img-1 {
@@ -383,21 +530,44 @@ a {
 }
 
 .acessoires-info {
-  margin-top: 3rem;
+  margin-top: 2.9rem;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
   font-size: 1.7rem;
   text-transform: capitalize;
+  animation: fadeIn 1s;
+}
+
+.acessoires-name {
+  letter-spacing: 0.3rem;
+  padding-bottom: 1rem;
 }
 
 .acessoires-price {
-  margin-top: 2rem;
   font-size: 1.8rem;
   color: var(--main);
   letter-spacing: 0.1rem;
   font-style: italic;
+}
+
+.acessoires-item-btn-container {
+  animation: fadeIn 1s;
+}
+
+.acessoires-item-btn {
+  margin-top: 2rem;
+  position: relative;
+  z-index: 99;
+  display: block;
+  font-size: 1.4rem;
+  font-weight: 400;
+  border: 1px solid var(--main);
+  padding: 2rem 1.8rem;
+  letter-spacing: 0.3rem;
+  color: var(--main);
+  cursor: pointer;
 }
 
 .acessoires-block-image {
@@ -417,6 +587,10 @@ a {
   line-height: 2;
 }
 
+.acessoires-block-image a {
+  color: white;
+}
+
 .block-image-1 {
   background-image: linear-gradient( rgba(189, 187, 184, 0.239), rgba(29, 29, 28, 0.445)), url(./img/acessory-male-1.jpg);
 }
@@ -428,10 +602,215 @@ a {
 /* <!-- networking --> */
 
 .networking-container {
-  height: 50vh;
+  padding: 10vh 0;
+  width: 100%;
+  background-color: white;
+}
+
+.networking-header {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.2rem;
+  text-transform: uppercase;
+  color: var(--special);
+  letter-spacing: 0.5rem;
+  line-height: 1.5;
+}
+
+.networking-gallery {
+  margin-top: 3rem;
+  height: 30rem;
+  min-width: 15rem;
+  display: flex;
+}
+
+.networking-gallery-photo {
+  width: 20%;
+  height: 100%;
+  background-image: url(./img/acessory-male-1.jpg);
+  background-repeat: repeat;
+  background-position: center;
+  background-size: cover;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 1.5rem;
+  padding: 1.5rem;
+  font-weight: 300;
+  cursor: pointer;
+  transition-delay: 1s;
+}
+
+.networking-gallery-photo:hover {
+  background-image: linear-gradient( rgba(42, 41, 39, 0.685), rgba(73, 71, 65, 0.623)), url(./img/acessory-male-1.jpg);
+  animation: fadeInSoft 3 s;
+}
+
+.networking-gallery-photo-text {
+  display: none;
+}
+
+.networking-instagram {
+  margin-top: 1.5rem;
+  font-style: italic;
+  font-size: 2rem;
+  color: var(--main);
+  font-weight: 400;
+  text-transform: lowercase;
+}
+
+.networking-servicies {
+  margin-top: 3rem;
+  display: flex;
+  justify-content: space-around;
+  font-size: 2.3rem;
+  text-transform: capitalize;
+  font-style: italic;
+  color: var(--main);
+  font-weight: 400;
+}
+
+.networking-servicies-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.networking-servicies-bar {
+  margin: 2rem 0;
+  width: 2rem;
+  height: 0.3rem;
+  background-color: var(--main);
 }
 
 /* main */
+
+/* footer */
+
+footer {
+  position: relative;
+  background-color: #F5F6F3;
+}
+
+.footer-logo-container {
+  position: absolute;
+  z-index: 999;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 4rem;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+}
+
+.footer-logo {
+  text-align: center;
+  font-size: 4rem;
+  font-family: GreatVibes;
+  color: var(--main);
+  text-align: center;
+}
+
+.footer-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: auto;
+  width: 90%;
+  padding-top: 8rem;
+}
+
+.footer-block {
+  position: relative;
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 20rem;
+  min-width: 20rem;
+  text-align: center;
+  padding: 1rem;
+  margin: 3rem 0;
+}
+
+.footer-block ul li {
+  margin: 2rem 0;
+  font-size: 1.5rem;
+  letter-spacing: 0.2rem;
+}
+
+.footer-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-form p {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: var(--special);
+  text-transform: uppercase;
+  letter-spacing: 0.5rem;
+}
+
+.footer-form input {
+  width: 20rem;
+  height: 5rem;
+  border: none;
+  margin: 1rem;
+  font-size: 1.5rem;
+}
+
+.footer-form-email {
+  background-color: transparent;
+  padding-left: 1rem;
+  border-bottom: 0.2rem solid var(--main) !important;
+}
+
+.footer-form-btn {
+  font-size: 1.4rem;
+  font-weight: 400;
+  border: 1px solid var(--main);
+  letter-spacing: 0.3rem;
+  color: white;
+  cursor: pointer;
+  border: 0.1rem solid var(--main) !important;
+  background-color: var(--main);
+}
+
+.footer-form-btn:hover {
+  color: var(--main);
+  background-color: white;
+  animation: fadeIn 1s;
+}
+
+.developed-rights {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e5ebd9;
+  width: 100%;
+  height: 5rem;
+}
+
+.developed-rights a {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--special);
+}
+
+/* footer */
 
 @media only screen and (max-width: 991px) {
   .image-container {
@@ -483,7 +862,7 @@ a {
     margin-right: 0rem;
     color: var(--special);
     text-transform: uppercase;
-    font-weight: 700;
+    font-weight: 500;
   }
   .links li {
     display: flex;
@@ -515,4 +894,35 @@ a {
 
 .fixed {
   position: fixed;
+}
+
+.ghost {
+  display: none;
+}
+
+@keyframes details {
+  0% {
+    height: -1%;
+  }
+  100% {
+    height: 12%;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInSoft {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.8;
+  }
 }
