@@ -1,3 +1,13 @@
+const client = contentful.createClient({
+    // This is the space ID. A space is like a project folder in Contentful terms
+    space: "3jnah0scoaeu",
+    // This is the access token for this space. Normally you get both ID and the token in the Contentful web app
+    accessToken: "5xEWn6C-76j5Ulq2m_Ou2H37Q6ikMySp3wQ-oIsHabY"
+});
+
+
+// console.log(client)
+
 const btnAcessories = document.querySelector(".acessoires-item-btn")
 const acessoriesBox = document.querySelector(".acessoires-block-item")
 const acessoiresInfo = document.querySelector(".acessoires-info")
@@ -8,6 +18,11 @@ const goUp = document.querySelector(".go-up")
 const itemsContainer = document.querySelector(".items-container")
 const itemInfoBox = document.querySelector(".item-info")
 const btnDetails = document.querySelector(".item-details")
+const hambuguerBtn = document.querySelector(".mobile-btn")
+const body = document.getElementsByName("body")
+const hambuguerClose = document.querySelector(".close-mobile-menu")
+const verTodosProdutos = document.querySelector(".items-btn")
+
 
 //-------- cart ------//
 const cart = document.querySelector(".cart")
@@ -19,10 +34,6 @@ const itemsInCart = document.querySelector(".item-in-cart")
 const limparCarrinho = document.querySelector(".limpar-carrinho")
 const cartSubtotal = document.querySelector(".Subtotal-value")
 
-
-
-
-
 //cart
 let carrinho = []
 let ButtonsDOM = []
@@ -32,9 +43,16 @@ let ButtonsDOM = []
 class Products {
     async getProducts() {
         try {
-            let result = await fetch('products.json')
-            let data = await result.json()
-            let products = data.items
+            let contentful = await client.getEntries({
+                content_type: "clothStore"
+            })
+            // .then((response) => console.log(response.items))
+            // .catch(console.error)
+            // let result = await fetch('products.json')
+            // let data = await result.json()
+            // let products = data.items
+
+            let products = contentful.items
             products = products.map(item => {
                 const { title, price } = item.fields
                 const { id } = item.sys
@@ -50,23 +68,27 @@ class Products {
 
 //display products 
 class UI {
-    displayProducts(products) {
-        // let novo = []
-        // for (let i = 0; i < 4; i++) {
-        //     novo.push(products[i])
-        // }
-        // console.log(novo)
-        let printProducts = products.map(function (product) {
+
+    displayProducts(products, x) {
+
+        const reduced = []
+
+        products.filter(function (product) {
+            if (reduced.length < x)
+                return reduced.push(product)
+        })
+
+        let printProducts = reduced.map(function (product) {
             return `
-             <div class="item">
-          <button class="add-cart-btn" data-id=${product.id}>
+            <div class="item">
+            <img src=${product.image} alt="" class="item-photo">
+            <button class="add-cart-btn" data-id=${product.id}>
             <i class="fas fa-cart-plus"> Add Cart</i>
-          </button>
-          <div class="best-seller">Mais Vendido</div>
-          <img src=${product.image} alt="" class="item-photo">
-          <div class="item-info">
+            </button>
+            <div class="best-seller">Mais Vendido</div>
+            <div class="item-info">
             <button class="item-details" >
-              Ver Detalhes
+            Ver Detalhes
             </button>
             <p class="item-name">${product.title}</p>
             <p class="item-price">${product.price}</p>
@@ -74,8 +96,9 @@ class UI {
         </div>`
         }).join("")
         itemsContainer.innerHTML = printProducts
-
     }
+
+
     getBagButtons() {
         const addCartBtns = [...document.querySelectorAll(".add-cart-btn")]
         ButtonsDOM = addCartBtns
@@ -108,6 +131,9 @@ class UI {
             })
         });
     }
+
+
+
     setCartValues(carrinho) {
         let tempTotal = 0
         let itemsTotal = 0
@@ -117,14 +143,13 @@ class UI {
         })
         itemsInCart.innerText = parseFloat(itemsTotal.toFixed(2))
         cartSubtotal.innerText = tempTotal.toFixed(2)
-
     }
 
     addCartItem(item) {
         const li = document.createElement("li")
         li.classList.add("cart-item")
         li.innerHTML =
-            `      <img class="cart-item-img" src="${item.image}"></img>
+            `     <img class="cart-item-img" src="${item.image}"></img>
                   <div class="cart-item-info">
                     <p class="cart-item-name">${item.title}</p>
                     <p class="cart-item-price">${item.price}$</p>
@@ -145,8 +170,8 @@ class UI {
                   </button>
                `
         cartItemList.appendChild(li)
-
     }
+
     setupApp() {
         carrinho = Storage.getCart()
         this.setCartValues(carrinho)
@@ -165,10 +190,6 @@ class UI {
         })
         //cart functionality
         cartContainer.addEventListener("click", (event) => {
-            // console.log(event.target)
-            let addBtn = "cart-item-amount-plus"
-            let subBtn = "cart-item-amount-less"
-
             if (event.target.classList.contains("cart-item-close")) {
                 let removeItem = event.target
                 let id = removeItem.dataset.id
@@ -187,6 +208,7 @@ class UI {
             }
 
             else if (event.target.classList.contains("cart-item-amount-less")) {
+
                 let lowerAmount = event.target
                 let id = lowerAmount.dataset.id
                 let tempItem = carrinho.find(item => item.id === id)
@@ -194,18 +216,13 @@ class UI {
                 if (tempItem.amount > 0) {
                     Storage.saveCart(carrinho)
                     this.setCartValues(carrinho)
-                    addAmount.nextElementSibling.innerText = tempItem.amount
-                    console.log()
+                    lowerAmount.nextElementSibling.innerText = tempItem.amount
                 }
                 else {
-                    cartItemList.removeChild(lowerAmount.parentElement.parentElement)
+                    this.removeItem(id)
+                    cartItemList.removeChild(lowerAmount.parentElement.parentElement.parentElement)
                 }
-
-
-
-
             }
-
         })
     }
 
@@ -232,6 +249,8 @@ class UI {
 }
 
 
+
+
 //local storage
 class Storage {
     static saveProducts(products) {
@@ -251,6 +270,8 @@ class Storage {
     }
 }
 
+
+
 document.addEventListener("DOMContentLoaded", function () {
     const ui = new UI()
     const products = new Products()
@@ -259,26 +280,25 @@ document.addEventListener("DOMContentLoaded", function () {
     //get all products
     products.getProducts().then(products => ui.displayProducts(products))
     products.getProducts().then(products => {
-        ui.displayProducts(products)
+        ui.displayProducts(products, 4)
         Storage.saveProducts(products)
+        verTodosProdutos.addEventListener("click", () => {
+            x = products.length
+            ui.displayProducts(products, products.length)
+            Storage.saveProducts(products)
+        })
+        /// Retorna numero de produtos escolhidos
     }).then(() => {
         ui.getBagButtons()
         ui.cartLogic()
     })
+
+
 })
 
 
 
 
-acessoriesBox.addEventListener("mouseenter", (e) => {
-    acessoiresInfo.classList.add("ghost")
-    acessoriesBtn.classList.remove("ghost")
-})
-
-acessoriesBox.addEventListener("mouseleave", (e) => {
-    acessoiresInfo.classList.remove("ghost")
-    acessoriesBtn.classList.add("ghost")
-})
 
 
 function openCart(e) {
@@ -327,21 +347,52 @@ function windowListner() {
             navBar.classList.add("fixed")
             liksContainer.classList.add("ghost")
             navBar.style.backgroundColor = 'rgba(255,255,255,0.9)'.replace(/[^,]+(?=\))/, '0.9')
+            hambuguerClose.classList.remove("show")
+            liksContainer.classList.remove("display-mobile-menu")
+
         }
+
         else {
             navBar.classList.remove("fixed")
             liksContainer.classList.add("remove")
             liksContainer.classList.remove("ghost")
             navBar.style.backgroundColor = "white"
             goUp.classList.add("ghost")
-
         }
+
         if (navHeight + 500 < pageHeight) {
             goUp.classList.remove("ghost")
             if (cartContainer.classList.contains("cart-in")) {
                 goUp.classList.add("ghost")
+
             }
         }
     })
 }
+
+hambuguerBtn.addEventListener("click", () => {
+    liksContainer.classList.add("display-mobile-menu")
+    liksContainer.classList.remove("ghost")
+    goUp.classList.add("ghost")
+    hambuguerClose.classList.add("show")
+})
+
+hambuguerClose.addEventListener("click", () => {
+    liksContainer.classList.remove("display-mobile-menu")
+
+    liksContainer.classList.add("ghost")
+    goUp.classList.remove("ghost")
+    hambuguerClose.classList.remove("show")
+})
+
+
+
+// function disableScrolling() {
+//     var x = window.scrollX;
+//     var y = window.scrollY;
+//     window.onscroll = () => { window.scrollTo(x, y); };
+// }
+// function enableScrolling() {
+//     window.onscroll = () => { };
+// }
 

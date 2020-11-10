@@ -11,8 +11,8 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" href="main.css" />
-  <title>Sphalerite</title>
+  <link rel="stylesheet" href="./css/main.css" />
+  <title>Sphalerite Home</title>
 </head>
 
 <body>
@@ -36,6 +36,8 @@
             <div class="bar bar2"></div>
             <div class="bar bar3"></div>
           </button>
+          <button class="close-mobile-menu "><i class="fas fa-times"></i></button>
+
 
           <!-- cart -->
           <!-- cart-fullscren overlay -->
@@ -104,13 +106,10 @@
               </a>
             </li>
             <li>
-              <a href="#services" class="scroll-link">Nossa História</a>
+              <a href="./pages/historia.html" class="scroll-link">Nossa História</a>
             </li>
             <li>
-              <a href="#info" class="scroll-link">Contactos</a>
-            </li>
-            <li>
-              <a href="#info" class="scroll-link">info</a>
+              <a href="./pages/contactos.html" class="scroll-link">Contactos</a>
             </li>
           </ul>
         </div>
@@ -165,20 +164,21 @@
 
       <!-- Item 1 -->
       <div class="acessoires-block-container">
-        <a class="acessoires-block-item" href="#">
-          <div class="acessories-img acessories-img-1">
+        <div class="acessoires-block-item" href="#">
+          <div class="acessories-img acessories-img-2">
           </div>
           <div class="acessoires-info ">
             <p class="acessoires-name">Sou um produto</p>
             <p class="acessoires-price">135.00€</p>
           </div>
-          <div class="acessoires-item-btn-container ghost ">
-            <div class="acessoires-item-btn"> Adicionar ao Carrinho </div>
+          <div class="acessoires-item-btn-container ">
+            <a class="acessoires-item-btn"> Ver Detalhes </a>
           </div>
-        </a>
+        </div>
         <div class="acessoires-block-image block-image-1">
           <a href="#">Acessórios da moda</a>
         </div>
+
       </div>
 
       <!-- Item 2 -->
@@ -193,8 +193,8 @@
             <p class="acessoires-name">Sou um produto</p>
             <p class="acessoires-price">135.00€</p>
           </div>
-          <div class="acessoires-item-btn-container ghost ">
-            <div class="acessoires-item-btn"> Ver a Nova Coleção </div>
+          <div class="acessoires-item-btn-container  ">
+            <div class="acessoires-item-btn"> Ver Detalhes </div>
           </div>
         </a>
       </div>
@@ -205,32 +205,32 @@
     <section class="networking-container">
       <div class="networking-header">
         <h3>Siga A <br> Sphalerite no instagram</h3>
-        <h2 class="networking-instagram">@Sphalerite</h2>
+        <h2 class="networking-instagram"> <a class="link-insta" href="#">Sphalerite@</a></h2>
       </div>
       <div class="networking-gallery">
         <a href="#" class="networking-gallery-photo img1">
           <div class="networking-gallery-photo-text ">
-            #Lorem, ipsum, #Lorem, ipsum,#Lorem, ipsum
+            #Lorem, ipsum
           </div>
         </a>
-        <a href="#" class="networking-gallery-photo img1">
+        <a href="#" class="networking-gallery-photo img2">
           <div class="networking-gallery-photo-text ">
-            #Lorem, ipsum, #Lorem, ipsum,#Lorem, ipsum
+            #Lorem
           </div>
         </a>
-        <a href="#" class="networking-gallery-photo img1">
+        <a href="#" class="networking-gallery-photo img3">
           <div class="networking-gallery-photo-text ">
-            #Lorem, ipsum, #Lorem, ipsum,#Lorem, ipsum
+            #Lorem, ipsum, #Lorem, ipsum
           </div>
         </a>
-        <a href="#" class="networking-gallery-photo img1">
+        <a href="#" class="networking-gallery-photo img4">
           <div class="networking-gallery-photo-text ">
-            #Lorem, ipsum, #Lorem, ipsum,#Lorem, ipsum
+            #Lorem, ipsum, ipsum
           </div>
         </a>
-        <a href="#" class="networking-gallery-photo img1">
+        <a href="#" class="networking-gallery-photo img5">
           <div class="networking-gallery-photo-text ">
-            #Lorem, ipsum, #Lorem, ipsum,#Lorem, ipsum
+            #Lorem, ipsum, #Lorem, ipsum,#Lorem,
           </div>
         </a>
       </div>
@@ -275,13 +275,13 @@
           <li><a href="#">Nossas Lojas</a></li>
         </ul>
       </div>
-      <div class="footer-block">
+      <div class="footer-block footer-block-special">
         <ul>
           <li><a href="#">facebook</a></li>
           <li><a href="#">Instagram</a></li>
-          <li>&nbsp;</li>
-          <li>&nbsp;</li>
-          <li>&nbsp;</li>
+          <li class="ghost-600">&nbsp;</li>
+          <li class="ghost-600">&nbsp;</li>
+          <li class="ghost-600">&nbsp;</li>
         </ul>
       </div>
       <div class="footer-block">
@@ -294,7 +294,8 @@
     </div>
     <div class="developed-rights"><a href="">Desenvoldido por Artur Alves</a></div>
   </footer>
-  <script src="main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/contentful@latest/dist/contentful.browser.min.js"></script>
+  <script src="./scripts/main.js"></script>
 </body>
 
 </html>
