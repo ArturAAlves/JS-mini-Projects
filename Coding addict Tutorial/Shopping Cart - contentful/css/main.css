@@ -1408,24 +1408,89 @@ footer {
   letter-spacing: 0.2rem;
 }
 
+@media only screen and (max-width: 992px) {
+  .our-story {
+    height: 130vh;
+  }
+  .story-box {
+    width: 100%;
+    height: 35%;
+    overflow: hidden;
+  }
+  .story-2 {
+    height: 30%;
+  }
+  .story-3 {
+    display: none
+  }
+}
+
 /* contactos */
+
+.main-container-contactos {
+  margin-top: 5rem;
+  padding-top: 10rem;
+  padding-bottom: 10rem;
+  background-color: rgb(248, 248, 248);
+}
+
+.formulario-title {
+  justify-content: center;
+  text-align: center;
+  margin-top: 10rem;
+  margin-bottom: 8rem;
+}
+
+.contactos-container {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  width: 70%;
+}
+
+.contactos-box {
+  width: 33.33%;
+  justify-content: center;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.contactos-box-content li {
+  line-height: 1.5;
+}
+
+.contactos-box-content li:first-child {
+  font-size: 2rem;
+  font-style: italic;
+  color: var(--main);
+  line-height: 2.5;
+}
 
 .formulario-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 40vh;
+}
+
+.formulario-title h4 {
+  font-size: 2rem;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--main);
 }
 
 .formulario-title {
-  margin-bottom: 5rem;
+  font-size: 1.5rem;
+  line-height: 1.8;
+  width: 30%;
 }
 
 .contact-form {
   width: 70%;
   display: flex;
   flex-wrap: wrap;
+  font-size: 1.6rem;
 }
 
 .contact-form-box {
@@ -1442,19 +1507,78 @@ footer {
 }
 
 .contact-form input, textarea {
+  font-size: 1.4rem;
   width: 100%;
   resize: none;
   border: none;
-  border-bottom: 1px solid goldenrod;
+  border-bottom: 1px solid var(--main);
   outline: none;
   margin-bottom: 3rem;
+  margin-top: 0.5rem;
   height: 3rem;
+  padding-left: 0.5rem;
+  background-color: transparent;
+}
+
+textarea {
+  height: 6rem;
+  font-size: 2rem;
 }
 
 .contact-form input:focus, textarea:focus {
-  border-bottom: 2px solid goldenrod;
+  border-bottom: 2px solid var(--main);
 }
 
 .contact-form-btn {
   margin: auto;
+}
+
+.contact-form-btn {
+  background-color: transparent;
+  padding: 2rem 5rem;
+}
+
+.contactos-networking-container {
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+.contactos-items-container {
+  margin-top: 10rem;
+  display: flex;
+  font-size: 3rem;
+  justify-content: center;
+}
+
+.networking-item a {
+  margin: 2rem;
+  color: var(--special);
+}
+
+.networking-item a i {
+  color: var(--main);
+}
+
+@media only screen and (max-width: 992px) {
+  .contactos-container {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    flex-wrap: wrap;
+    width: 90%;
+  }
+  .formulario-title {
+    width: 90%;
+  }
+  .contactos-box {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    font-size: 1.5rem;
+    margin: 3rem;
+  }
 }
