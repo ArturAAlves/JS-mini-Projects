@@ -132,7 +132,6 @@ class UI {
         });
     }
 
-
     setCartValues(carrinho) {
         let tempTotal = 0
         let itemsTotal = 0
