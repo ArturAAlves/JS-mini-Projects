@@ -68,11 +68,8 @@ class Products {
 
 //display products 
 class UI {
-
     displayProducts(products, x) {
-
         const reduced = []
-
         products.filter(function (product) {
             if (reduced.length < x)
                 return reduced.push(product)
@@ -270,8 +267,6 @@ class Storage {
     }
 }
 
-
-
 document.addEventListener("DOMContentLoaded", function () {
     const ui = new UI()
     const products = new Products()
@@ -282,23 +277,17 @@ document.addEventListener("DOMContentLoaded", function () {
     products.getProducts().then(products => {
         ui.displayProducts(products, 4)
         Storage.saveProducts(products)
-        verTodosProdutos.addEventListener("click", () => {
-            x = products.length
-            ui.displayProducts(products, products.length)
-            Storage.saveProducts(products)
-        })
+        // verTodosProdutos.addEventListener("click", () => {
+        //     x = products.length
+        //     ui.displayProducts(products, products.length)
+        //     Storage.saveProducts(products)
+        // })
         /// Retorna numero de produtos escolhidos
     }).then(() => {
         ui.getBagButtons()
         ui.cartLogic()
     })
-
-
 })
-
-
-
-
 
 
 function openCart(e) {
@@ -349,7 +338,6 @@ function windowListner() {
             navBar.style.backgroundColor = 'rgba(255,255,255,0.9)'.replace(/[^,]+(?=\))/, '0.9')
             hambuguerClose.classList.remove("show")
             liksContainer.classList.remove("display-mobile-menu")
-
         }
 
         else {
@@ -364,7 +352,6 @@ function windowListner() {
             goUp.classList.remove("ghost")
             if (cartContainer.classList.contains("cart-in")) {
                 goUp.classList.add("ghost")
-
             }
         }
     })
