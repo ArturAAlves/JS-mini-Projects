@@ -73,7 +73,7 @@ const menuList = [
     }
 ]
 
-const menuContainer = document.querySelector(".menu-container")
+const itemsContainer = document.querySelector(".menu-container")
 const btnContainer = document.querySelector(".btn-container")
 
 window.addEventListener("DOMContentLoaded", function () {
@@ -83,10 +83,8 @@ window.addEventListener("DOMContentLoaded", function () {
 
 })
 
-
-
 function createMenu(menuList) {
-    const printElements = menuList.map(function (item) {
+    const printItems = menuList.map(function (item) {
         return `<div class="menu-item-container">
             <div class="menu-img-container">
             <img class="menu-item-img" src=${item.imgUrl} alt="">
@@ -104,41 +102,107 @@ function createMenu(menuList) {
             </div>
             </div>
         </div>`
-    }
-    ).join("")
-    menuContainer.innerHTML = printElements
+    })
+    itemsContainer.innerHTML = printItems.join("")
 }
-
 
 function filter() {
-    btnContainer.addEventListener("click", function (e) {
-        const btn = e.target.dataset.id
+    btnContainer.addEventListener("click", function (item) {
+        const btn = item.target.dataset.id
         if (btn != undefined) {
-            const filter = menuList.filter(function (element) {
-                if (btn == element.type) {
-                    return element
-                } else if (btn == "all") {
-                    return element
+            const filterItems = menuList.filter(function (item) {
+                if (btn == item.type) {
+                    return item
+                }
+                else if (btn == "all") {
+                    return item
                 }
             })
-            createMenu(filter)
+            createMenu(filterItems)
         }
     })
+
 }
 
+
 function createBtn() {
-    const printBtn = menuList.reduce(function (newArray, e) {
-        if (!newArray.includes(e.type)) {
-            newArray.push(e.type)
+    const findBtns = menuList.reduce(function (newArray, array) {
+        const name = array.type
+        if (!newArray.includes(name)) {
+            newArray.push(name)
         }
         return newArray
     }, ["all"])
-    const createBtn = printBtn.map(function (btn) {
-        return `<button class="btn" data-id=${btn}>${btn}</button>`
-    }).join("")
-    btnContainer.innerHTML = createBtn
-    console.log(printBtn)
+
+    const printBtns = findBtns.map(function (e) {
+        return `<button class="btn fruit" data-id=${e}>${e}</button>`
+    })
+    btnContainer.innerHTML = printBtns.join("")
 }
+
+
+
+
+
+
+
+
+
+
+// function createMenu(menuList) {
+//     const printElements = menuList.map(function (item) {
+//         return `<div class="menu-item-container">
+//             <div class="menu-img-container">
+//             <img class="menu-item-img" src=${item.imgUrl} alt="">
+//             </div>
+//             <div class="menu-content-container">
+//             <div class="menu-item-text">
+//                 <div class="menu-item-tittle-container">
+//                 <p class="menu-item-tittle"><span>${item.name}</span> <span class="menu-item-price">$${item.price}</span>
+//                 </p>
+//                 <div class="menu-item-tittle-underline"></div>
+//                 </div>
+//                 <div class="menu-item-description">
+//                 <p>${item.description}</p>
+//                 </div>
+//             </div>
+//             </div>
+//         </div>`
+//     }
+//     ).join("")
+//     menuContainer.innerHTML = printElements
+// }
+
+
+// function filter() {
+//     btnContainer.addEventListener("click", function (e) {
+//         const btn = e.target.dataset.id
+//         if (btn != undefined) {
+//             const filter = menuList.filter(function (element) {
+//                 if (btn == element.type) {
+//                     return element
+//                 } else if (btn == "all") {
+//                     return element
+//                 }
+//             })
+//             createMenu(filter)
+//         }
+//     })
+// }
+
+// function createBtn() {
+//     const printBtn = menuList.reduce(function (newArray, e) {
+//         if (!newArray.includes(e.type)) {
+//             newArray.push(e.type)
+//         }
+//         return newArray
+//     }, ["all"])
+//     const createBtn = printBtn.map(function (btn) {
+//         return `<button class="btn" data-id=${btn}>${btn}</button>`
+//     }).join("")
+//     btnContainer.innerHTML = createBtn
+//     console.log(printBtn)
+// }
 
 
 
