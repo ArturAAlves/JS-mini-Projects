@@ -1,0 +1,449 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --header-bg-color: #121212;
+    --sedond-hero-bg-color: #fafafa;
+    --hero-text-colorr: #1D1D1F;
+    --white-color: #ffffff;
+    --gray-color: #f2f2f2;
+    --green-color: #008000;
+    --link-text-color: #0066CC;
+    --lightgray-ipad-color: #FBFBFD;
+}
+
+/* Main Header */
+
+.main-header {
+    z-index: -1;
+    background-color: var(--header-bg-color);
+    margin: 0px !important;
+    padding: 0px !important;
+    overflow: hidden;
+}
+
+.hero-header-img {
+    background-image: url(../img/hero_se.jpg);
+    background-size: contain;
+    height: 500px;
+    width: 90vw;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    z-index: 2;
+    border: none
+}
+
+.main-header-jumbo {
+    color: white;
+    z-index: 999;
+    position: relative;
+    transform: translateY(150px);
+}
+
+.main-header-jumbo h2 {
+    font-size: 4rem;
+}
+
+.main-header-jumbo h3 {
+    font-weight: normal;
+}
+
+.main-header-jumbo-links {
+    font-size: 1.5rem;
+    letter-spacing: -1px;
+    color: var(--link-text-color);
+}
+
+/* second Header */
+
+.second-header {
+    z-index: -1;
+    background-color: var(--sedond-hero-bg-color);
+    margin: 0px !important;
+    padding: 0px !important;
+    overflow: hidden;
+}
+
+.second-hero-header-img {
+    background-image: url(../img/hero_iphone_11.jpg);
+    background-size: cover;
+    height: 500px;
+    width: 100vw;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    z-index: 2;
+    border: none
+}
+
+.second-header-jumbo {
+    color: var(--hero-text-colorr);
+    z-index: 999;
+    position: relative;
+    transform: translateY(50px);
+}
+
+.second-header-jumbo h2 {
+    font-size: 3.5rem;
+}
+
+.second-header-jumbo h3 {
+    font-weight: normal;
+    letter-spacing: -1px;
+}
+
+.second-header-jumbo-links {
+    font-size: 1.4rem;
+    font-weight: 400;
+    letter-spacing: -1px;
+    color: var(--link-text-color);
+}
+
+/* third Header */
+
+.third-header {
+    z-index: -1;
+    background-color: var(--sedond-hero-bg-color);
+    margin: 0px !important;
+    padding: 0px !important;
+    overflow: hidden;
+}
+
+.third-hero-header-img {
+    background-image: url(../img/ipad_pro.jpg);
+    background-size: contain;
+    height: 65vh;
+    width: 100vw;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    z-index: 2;
+    border: none
+}
+
+.third-header-jumbo {
+    color: var(--hero-text-colorr);
+    z-index: 999;
+    position: relative;
+    transform: translateY(50px);
+    letter-spacing: 0px;
+}
+
+.third-header-jumbo h2 {
+    font-size: 3.5rem;
+}
+
+.third-header-jumbo h3 {
+    font-weight: normal;
+    letter-spacing: -1px;
+}
+
+.third-header-jumbo-links {
+    font-size: 1.4rem;
+    letter-spacing: -1px;
+    color: var(--link-text-color);
+    font-weight: 400;
+}
+
+/* fourth Header */
+
+.fourth-header {
+    z-index: -1;
+    background-color: var(--gray-color);
+    margin: 0px !important;
+    padding: 0px !important;
+    overflow: hidden;
+}
+
+.fourth-hero-header-img {
+    background-image: url(../img/imac.jpg);
+    background-size: contain;
+    height: 35vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    z-index: 2;
+    border: none;
+    transform: translateY(150px);
+}
+
+.fourth-header-jumbo {
+    color: var(--hero-text-colorr);
+    z-index: 999;
+    position: relative;
+    transform: translateY(50px);
+    letter-spacing: 0px;
+}
+
+.fourth-header-jumbo h2 {
+    font-size: 3.5rem;
+}
+
+.fourth-header-jumbo h3 {
+    font-weight: normal;
+    letter-spacing: -1px;
+}
+
+.fourth-header-jumbo-links {
+    font-size: 1.4rem;
+    letter-spacing: -1px;
+    color: var(--link-text-color);
+    font-weight: 400;
+}
+
+/* fifth Header */
+
+.fifth-header {
+    z-index: -1;
+    background-color: var(--lightgray-ipad-color);
+    margin: 0px !important;
+    padding: 0px !important;
+    overflow: hidden;
+}
+
+.fifth-hero-header-img {
+    background-image: url(../img/apple_watch.jpg);
+    background-size: contain;
+    height: 55vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    z-index: 2;
+    border: none;
+    transform: translateY(px);
+}
+
+.fifth-header-jumbo {
+    color: var(--hero-text-colorr);
+    z-index: 999;
+    position: relative;
+    transform: translateY(50px);
+    letter-spacing: 0px;
+}
+
+.fifth-header-jumbo h4 {
+    font-weight: bold;
+    font-size: 2em;
+    letter-spacing: -1px;
+}
+
+.fifth-header-jumbo span {
+    font-weight: 500;
+}
+
+.fifth-header-jumbo h5 {
+    transform: translateY(-16px);
+    font-size: normal;
+    font-weight: 400;
+}
+
+.fifth-header-jumbo-links {
+    font-size: 1.4rem;
+    letter-spacing: -1px;
+    color: var(--link-text-color);
+    font-weight: 400;
+    line-height: 0;
+}
+
+.fifth-header-watch-icon {
+    transform: translateY(-10px);
+    width: 15%;
+    max-width: 50px;
+}
+
+/* sixth Header */
+
+.sixth-header {
+    z-index: -1;
+    margin: 0px !important;
+    padding: 0px !important;
+    background-image: url(../img/games.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    border: none;
+    width: 100%;
+}
+
+.sixth-header-jumbo {
+    color: white;
+    z-index: 999;
+    position: relative;
+    transform: translateY(50px);
+    letter-spacing: 0px;
+}
+
+.sixth-header-jumbo h4 {
+    font-weight: bold;
+    font-size: 2em;
+    letter-spacing: -1px;
+}
+
+.sixth-header-jumbo span {
+    font-weight: 500;
+}
+
+.sixth-header-jumbo h5 {
+    font-size: normal;
+    font-weight: 400;
+    line-height: 1;
+}
+
+.sixth-header-jumbo-links a {
+    font-size: 1.4rem;
+    letter-spacing: -1px;
+    color: var(--link-text-color);
+    font-weight: 400;
+    font-size: 1.2em;
+    color: white;
+}
+
+.sixth-header-watch-icon {
+    transform: translateY(-10px);
+    width: 15%;
+    max-width: 60px;
+}
+
+/* sevenths Header */
+
+.seventh-header {
+    z-index: -1;
+    background-color: var(--lightgray-ipad-color);
+    margin: 0px !important;
+    padding: 0px !important;
+    overflow: hidden;
+}
+
+.seventh-hero-header-img {
+    background-image: url(../img/macbook.jpg);
+    background-size: contain;
+    height: 55vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    z-index: 2;
+    border: none;
+    transform: translateY(px);
+}
+
+.seventh-header-jumbo {
+    color: var(--hero-text-colorr);
+    z-index: 999;
+    position: relative;
+    letter-spacing: 0px;
+    transform: translateY(40px);
+}
+
+.seventh-header-jumbo h4 {
+    font-weight: bold;
+    font-size: 2em;
+    letter-spacing: -1px;
+}
+
+.seventh-header-jumbo span {
+    font-weight: 500;
+}
+
+.seventh-header-jumbo h5 {
+    font-size: normal;
+    font-weight: 400;
+}
+
+.sevenths-header-jumbo-links {
+    font-size: 1.4rem;
+    letter-spacing: -1px;
+    color: var(--link-text-color);
+    font-weight: 400;
+    line-height: 0;
+}
+
+/* eighth */
+
+/* Main Header */
+
+.eighth-header {
+    z-index: -1;
+    background-color: #000000;
+    margin: 0px !important;
+    padding: 0px !important;
+    overflow: hidden;
+    border: none;
+}
+
+.eighth-header-img {
+    background-image: url(../img/apple_tv.jpg);
+    background-size: cover;
+    height: 40vh;
+    width: 100vw;
+    background-repeat: no-repeat;
+    background-position: top;
+    position: relative;
+    z-index: 2;
+    border: none;
+}
+
+.eighth-header-jumbo {
+    color: white;
+    z-index: 999;
+    position: relative;
+}
+
+.eighth-header-jumbo h2 {
+    font-size: 2rem;
+}
+
+.eighth-header-jumbo h5 {
+    font-weight: normal;
+}
+
+.eighth-header-jumbo-links a {
+    font-size: 1.5rem;
+    letter-spacing: -1px;
+    color: white;
+}
+
+/* footer */
+
+.footer-container {
+    font-size: small;
+    color: #86868B;
+}
+
+.footer-size {
+    max-width: 1000px;
+}
+
+#footer {
+    text-align: left;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+#footer h3 {
+    font-size: 1.5rem;
+    margin-top: 20px;
+}
+
+#footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links {
+
+    display: flex;
+    justify-content: center;
+
+}
+
+
+.footer-link {
+    margin:0 15px;
+}

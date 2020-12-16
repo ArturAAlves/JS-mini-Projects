@@ -1,0 +1,86 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: sans-serif;
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+}
+
+article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
+    display: block;
+}
+
+body {
+    margin: 0;
+    font-size: 1.3rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: white;
+    text-align: left;
+}
+
+.main-container {
+    max-width: 800px;
+    padding-top: 100px;
+    margin: auto;
+}
+
+#header {
+    text-align: center;
+}
+
+#header h1 {
+    margin: 0;
+}
+
+.global-container {
+    background-image: linear-gradient( rgba(37, 33, 71, 0.356), rgba(47, 50, 95, 0.562)), url("https://www.publituris.pt/wp-content/uploads/2018/06/Oporto-Cais-de-Gaia.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.form {
+    background-color: #252246cc;
+    padding: 50px;
+}
+
+
+#submit {
+    text-align: center;
+    text-decoration: none;
+    background-color: rgb(88, 185, 88);
+    padding: 10px 10px;
+ color: white;
+ font-size: 1.1rem;
+ width: 100%;
+}
+
+#textarea {
+    height: 120px;
+    width: 100%;
+}
+
+.form-control{
+    width: 100%;
+    height: 2rem;
+    border-radius:5px;
+}
+
+*::placeholder{
+    font-size: 1.1rem;
+}
+
+option{
+    font-size: 1.1rem;
+
+}
+select{
+    font-size: 1.1rem;
+}
+
+
+.checkbox{
+    height: 1.2rem;
+    width: 1.2rem;}

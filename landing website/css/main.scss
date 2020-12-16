@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=Rubik:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+/* Sass Template */
+@import 'include/global';
+@import 'include/grid.scss';
+@import 'include/spacing.scss';
+@import 'include/vars';
+@import 'include/typography';
+@import 'include/color';
+
+// nav Sass
+@import 'include/_navbar.scss';
+
+// Pages Sass
+@import 'include/_index.scss';
+@import 'include/_intro.scss';
+@import 'include/_projects.scss';

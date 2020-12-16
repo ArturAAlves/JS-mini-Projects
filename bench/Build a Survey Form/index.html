@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+</head>
+
+<body>
+    <div class="global-container">
+        <div id="main" class="main-container">
+            <header id="header">
+                <h1 id="title">Formulário sobre a sociedade</h1>
+                <p id="description">Obrigado por disponibilizar o seu tempo para responder ao Questionario</p>
+            </header>
+            <form id="survey-form" class="form">
+                <label id="name-label" for="name">Nome:</label><br>
+                <input id="name" type="text" id="name" name="name" placeholder=" Introduzir Nome" class="form-control"
+                    required><br>
+                <label id="email-label" for="email">Email:</label><br>
+                <input id="email" type="email" id="email" name="email" placeholder=" Introduza o seu email"
+                    class="form-control" required><br>
+                <label id="number-label" for="iddade">Idade (opcional)</label><br>
+                <input id="number" type="number" id="idade" name="idade" placeholder=" Idade" class="form-control"
+                    min="1" max="140"><br>
+                <br>
+                <label for="funcoes">Qual das seguintes opções descreve a sua atividade atual?</label><br>
+                <select name="funcoes" id="dropdown" class="form-control" >
+                    <option value="Estudante"> Estudante</option>
+                    <option value="Trabalho a tempo inteiro"> Trabalho a tempo inteiro</option>
+                    <option value="Trabalho a part-time"> Trabalho a part-time</option>
+                    <option value="Desempregrado"> Desempregrado</option>
+                    <option value="Desempregrado"> Não prentendo dizer</option>
+                    <option value="Desempregrado"> Outros</option>
+                </select>
+                <br>
+                <br>
+
+                <label for="sociedade">O que pensa sobre o comportamento social?</label><br>
+                <input class="checkbox" type="radio" id="muitofraco" name="avaliacao" value="muitofraco">
+                <label for="muitofraco">Muito fraco</label><br>
+
+                <input class="checkbox" type="radio" id="fraco" name="avaliacao" value="fraco">
+                <label for="fraco">Fraco</label><br>
+
+                <input class="checkbox" type="radio" id="razoavel" name="avaliacao" value="razoavel">
+                <label for="razoavel">Razoável </label><br>
+
+                <input class="checkbox" type="radio" id="bom" name="avaliacao" value="bom">
+                <label for="bom">Bom </label><br>
+
+                <input class="checkbox" type="radio" id="muitobom" name="avaliacao" value="muitobom">
+                <label for="muitobom">Muito bom </label><br>
+                <br>
+
+                <label for="cidade">Qual das seguintes opções mais gosta da sua cidade?</label><br>
+                <select name="cidade" id="cidade" class="form-control" id="dropdown">
+                    <option value="Acessos e estradas">Acessos e estradas</option>
+                    <option value="Rede de Transportes">Rede de Transportes</option>
+                    <option value="Limpeza">Limpeza</option>
+                    <option value="Segurança">Segurança</option>
+                    <option value="Comunidade">Comunidade</option>
+                </select>
+                <br><br>
+
+                <label for="funcoes">Qual das seguintes opções mais gosta da sua cidade?</label><br>
+                <input class="checkbox" type="checkbox" id="op1" name="op1" value="op1">
+                <label for="op1">Acessos e estradas</label><br>
+                <input class="checkbox" type="checkbox" id="op2" name="op2" value="op2">
+                <label for="op2"> Rede de Transportes</label><br>
+                <input class="checkbox" type="checkbox" id="op3" name="op3" value="op3">
+                <label for="op3"> Limpeza</label><br>
+                <input class="checkbox" type="checkbox" id="op4" name="op4" value="op4">
+                <label for="op4"> Segurança</label><br>
+                <input class="checkbox" type="checkbox" id="op5" name="op5" value="op5">
+                <label for="op5"> Comunidade</label><br><br>
+
+                <label for="Sugestoes">Comentários e sugestões</label><br>
+                <textarea id="textarea" placeholder="Comentários e sugestões"></textarea>
+                <br><br>
+              
+                <button id="submit">Submeter</button>
+
+            </form>
+
+        </div>
+    </div>
+</body>
+
+</html>
