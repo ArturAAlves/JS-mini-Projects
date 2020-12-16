@@ -1,0 +1,467 @@
+#nav {
+    position: relative;
+    height: 10vh;
+    background-color: $color-hero;
+}
+
+.overflow {
+    overflow: hidden;
+}
+
+
+// Nav-bar btn
+.nav-btn {
+    position: absolute;
+    z-index: 999;
+    height: 3rem;
+    width: 3rem;
+    left: 7.5vw;
+    top: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+
+.nav-btn-bar1,
+.nav-btn-bar2,
+.nav-btn-bar3 {
+    width: 30px;
+    height: 0.2rem;
+    background-color: white;
+    margin: 0.2rem;
+    border-radius: 7px;
+
+}
+
+.nav-btn-bar-hover {
+    width: 35px;
+    background-color: white;
+    margin: 0.2rem;
+    border-radius: 7px;
+    transition: width ease-in-out 0.2s;
+}
+
+.nav-btn-bar4-cross {
+    width: 30px;
+    height: 0.2rem;
+    background-color: white;
+    margin: 0.2rem;
+    border-radius: 7px;
+    transform: rotate(45deg);
+    animation: cross4 0.3s;
+}
+
+.nav-btn-bar5-cross {
+    width: 30px;
+    height: 0.2rem;
+    background-color: white;
+    margin: 0.2rem;
+    border-radius: 7px;
+    transform: translate(-1px, -5px) rotate(135deg);
+    animation: cross5 0.3s;
+}
+
+.nav-btn-bar4-cross-close {
+    transform: translate(-1px, -5px) rotate(180deg);
+    animation: reversecross4 0.3s;
+    opacity: 0;
+}
+
+.nav-btn-bar5-cross-close {
+    transform: translate(-1px, -5px) rotate(180deg);
+    animation: reversecross5 0.3s;
+    opacity: 0;
+
+}
+
+// Nav-bar btn
+
+
+// Nav-bar 
+.nav-logo {
+    position: absolute;
+    display: flex;
+    left: 50%;
+    transform: translate(-50%);
+    top: 3rem;
+    width: 7.5rem;
+    height: 3rem;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    img {
+        width: 6rem;
+    }
+
+    // img:hover {
+    //     width: 7rem;
+    //     transition: width linear 0.5s;
+    // }
+}
+
+.nav-search {
+    position: absolute;
+    display: flex;
+    right: 3rem;
+    top: 3rem;
+    width: 7.5rem;
+    height: 3rem;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    .fa-search {
+        color: white;
+        font-size: 2rem;
+        display: none;
+    }
+
+}
+
+// end Nav-Bar
+
+
+
+// Nav-Menu
+.nav-menu {
+    display: none;
+}
+
+.nav-menu-active {
+    position: fixed;
+    z-index: 999;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: flex;
+}
+
+.nav-menu-name {
+    z-index: 1;
+    font-size: 1.5rem;
+    font-weight: 700;
+    padding: 1rem;
+    color: white;
+    background-color: $color-medium;
+    animation: fadeinName 1s;
+    font-family: $font-roboto;
+}
+
+.nav-menu-bar {
+    z-index: -1;
+    width: 60vw;
+    height: 2px;
+    background-color: rgba(255, 255, 255, 0.548);
+    border-radius: 20px;
+    animation: barGrow 1s;
+    animation-timing-function: linear;
+}
+
+.nav-menu-item {
+    margin: 4rem 0;
+
+}
+
+.nav-menu-item a {
+    font-size: 4rem;
+    color: white;
+    font-weight: 700;
+    font-family: $font-raleway;
+}
+
+.nav-menu-item a:hover {
+    padding: 1rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    animation: fadeinbg 2s;
+
+}
+
+
+
+.item1 {
+    animation: fadein 1s;
+}
+
+.item2 {
+
+    animation: fadein2 1s;
+}
+
+.item3 {
+
+    animation: fadein3 1s;
+}
+
+.item4 {
+
+    animation: fadein4 1s;
+}
+
+.item-deactive {
+    animation: fadeouttext 0.5s;
+    opacity: 0;
+}
+
+
+
+.nav-background-active,
+.nav-background-inactive {
+    position: fixed;
+    z-index: 1;
+    height: 100vh;
+    width: 100vw;
+    top: 4.5rem;
+    left: 7.5vw;
+    border-radius: 50%;
+    transform: translate(-20%, -35%);
+    background-color: $color-medium;
+}
+
+.nav-background-active {
+    height: 3500px;
+    width: 3500px;
+    animation: menu-background-grow 1s;
+    animation-timing-function: ease-out;
+}
+
+.nav-background-inactive {
+    height: 0px;
+    width: 0px;
+    animation: menu-background-shrink 0.7s;
+}
+
+
+
+
+//Keyframes
+@keyframes menu-background-grow {
+    0% {
+        height: 0px;
+        width: 0px;
+
+    }
+
+    100% {
+        height: 3500px;
+        width: 3500px;
+
+    }
+}
+
+
+@keyframes menu-background-shrink {
+    0% {
+        height: 3500px;
+        width: 3500px;
+
+    }
+
+    100% {
+        height: 0px;
+        width: 0px;
+    }
+}
+
+@keyframes barGrow {
+    0% {
+        width: 0;
+    }
+
+    80% {
+        width: 0;
+
+    }
+
+    100% {
+        width: 100;
+    }
+}
+
+
+@keyframes fadeinName {
+    0% {
+        opacity: 0;
+    }
+
+    20% {
+
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeinbg {
+    0% {
+        background-color: rgba(0, 0, 0, 0.1);
+
+
+    }
+
+
+    100% {
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+}
+
+
+
+@keyframes fadein {
+    0% {
+        opacity: 0;
+    }
+
+    30% {
+
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadein2 {
+    0% {
+
+        opacity: 0;
+    }
+
+    40% {
+
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadein3 {
+    0% {
+
+        opacity: 0;
+    }
+
+    50% {
+
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+
+@keyframes fadein4 {
+    0% {
+
+        opacity: 0;
+    }
+
+    60% {
+
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+
+@keyframes fadeouttext {
+    0% {
+
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+
+@keyframes buttonHover {
+    0% {
+
+        height: 0;
+    }
+
+    100% {
+        height: 100;
+    }
+}
+
+
+@keyframes cross4 {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(45deg);
+    }
+}
+
+
+@keyframes cross5 {
+    0% {
+        transform: translate(-1px, -5px) rotate(180deg);
+    }
+
+    100% {
+        transform: translate(-1px, -5px) rotate(135deg);
+    }
+}
+
+
+@keyframes reversecross4 {
+    0% {
+        opacity: 100%;
+        transform: rotate(45deg);
+    }
+
+    100% {
+        opacity: 0%;
+        transform: rotate(0deg);
+
+    }
+}
+
+
+@keyframes reversecross5 {
+    0% {
+        opacity: 100%;
+        transform: translate(-1px, -5px) rotate(135deg);
+    }
+
+    100% {
+        opacity: 0%;
+        transform: translate(-1px, -5px) rotate(180deg);
+
+    }
+}
+
+
+
+
+
+
+//Media query
+@media only screen and (min-width: 1000px) {
+    .nav-menu-bar {
+        width: 30vw;
+    }
+}

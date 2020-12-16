@@ -1,0 +1,84 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: sans-serif;
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+}
+
+article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
+    display: block;
+}
+
+body {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: left;
+}
+
+body {
+    background-color: white;
+}
+
+.global-container {
+    background-color: #EEEEEE;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 15px;
+}
+
+.header {
+    text-align: center;
+}
+
+.main-image-container {
+    background-color: white;
+    padding: 10px;
+    margin: 15px;
+}
+
+
+#img-caption{
+    margin:10px 0px;
+    text-align: center;
+}
+
+
+#image {
+    max-width: 800px;
+    width: auto;
+    display:block;
+    margin: auto;
+}
+
+.content {
+    max-width: 800px;
+    justify-content: center;
+    margin: auto;
+    padding: 15px;
+}
+
+.content-header {
+    text-align: center;
+}
+
+.content-body ul li {
+    margin: 15px;
+}
+
+.content-body-quote {
+    margin: 35px;
+}
+
+.footer {
+    max-width: 1000px;
+    text-align: center;
+    font-weight: 700;
+    margin: auto;
+    font-size: 1.2rem;
+}

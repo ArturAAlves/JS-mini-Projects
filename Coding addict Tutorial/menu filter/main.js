@@ -78,13 +78,17 @@ const btnContainer = document.querySelector(".btn-container")
 
 window.addEventListener("DOMContentLoaded", function () {
     createMenu(menuList)
-    filter()
+
     createBtn()
+
+    filter()
 
 })
 
+
+
 function createMenu(menuList) {
-    const printItems = menuList.map(function (item) {
+    const menu = menuList.map(function (item) {
         return `<div class="menu-item-container">
             <div class="menu-img-container">
             <img class="menu-item-img" src=${item.imgUrl} alt="">
@@ -103,44 +107,92 @@ function createMenu(menuList) {
             </div>
         </div>`
     })
-    itemsContainer.innerHTML = printItems.join("")
-}
-
-function filter() {
-    btnContainer.addEventListener("click", function (item) {
-        const btn = item.target.dataset.id
-        if (btn != undefined) {
-            const filterItems = menuList.filter(function (item) {
-                if (btn == item.type) {
-                    return item
-                }
-                else if (btn == "all") {
-                    return item
-                }
-            })
-            createMenu(filterItems)
-        }
-    })
-
+    itemsContainer.innerHTML = menu.join('')
 }
 
 
 function createBtn() {
-    const findBtns = menuList.reduce(function (newArray, array) {
-        const name = array.type
-        if (!newArray.includes(name)) {
-            newArray.push(name)
+    createButtons = menuList.reduce(function (newArray, item) {
+        const btn = item.type;
+        if (!newArray.includes(btn)) {
+            newArray.push(btn)
+
         }
         return newArray
-    }, ["all"])
+    }, ['all'])
 
-    const printBtns = findBtns.map(function (e) {
-        return `<button class="btn fruit" data-id=${e}>${e}</button>`
+
+    printButtons = createButtons.map(function (item) {
+        return `<button class="btn" data-id="${item}">${item}</button>`
     })
-    btnContainer.innerHTML = printBtns.join("")
+
+    btnContainer.innerHTML = printButtons.join('')
+
+
+
+
+
 }
 
 
+
+function filter() {
+    btnContainer.addEventListener('click', function (e) {
+        btn = e.target.dataset.id;
+        if (btn != undefined) {
+            const filterMenu = menuList.filter(function (item) {
+                if (btn == item.type) {
+                    return item
+                } else if (btn == 'all') {
+                    return item
+                }
+            })
+            createMenu(filterMenu)
+        }
+    })
+}
+
+
+let sam = {
+    castiel: "mary"
+}
+let dean = {
+    john: "crowley",
+    mary: "chuck"
+}
+
+//which, if any, of these three log statements will work?
+
+console.log(dean['mary']);
+
+
+// const hex = ['a', 'b', 'c', 'd', 'e', 'f', 1, 2, 3, 4, 5, 6, 7, 8, 9]
+// let colorProduced = "#"
+
+// function colorGenerator() {
+//     for (let index = 0; index < 6; index++) {
+//         let generator = Math.floor(Math.random() * hex.length)
+//         colorProduced += hex[generator]
+//     }
+// }
+
+// colorGenerator()
+// console.log(colorProduced)
+
+
+// function color() {
+//     return '#' + Math.random().toString(16).substring(2, 8);
+// }
+
+
+
+
+
+// function CreateBtn() {
+//     const btn =
+
+//         // <button class="btn all" data-id="all">ALL</button>
+// }
 
 
 

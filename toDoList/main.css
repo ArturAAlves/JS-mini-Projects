@@ -1,144 +1,161 @@
 *, *::before, *::after {
-    box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 html {
-    font-family: sans-serif;
-    line-height: 1.15;
-    -webkit-text-size-adjust: 100%;
-    overflow-x: hidden;
-    color: #16a4c4;
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+  color: rgb(56, 56, 56);
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
-body {
-    margin: 0;
-    padding: 0;
-}
-
-article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
-    display: block;
+article, aside, figcaption, figure, footer, header, hgroup, main, nav, section, canvas {
+  display: block;
 }
 
 ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
+  color: white;
 }
 
-.container-fluid {
-    height: 100vh;
-    background-color: rgba(228, 228, 228, 0.685);
+body {
+  background-color: antiquewhite;
 }
 
-.form {
-    display: flex;
+.section-center {
+  position: relative;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
+  background-color: white;
+  padding: 2rem 1rem;
+  margin-top: 15vh;
+  border-radius: 1rem;
+  text-align: center;
+  padding-bottom: 5rem;
+  -webkit-box-shadow: -18px 13px 94px -40px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: -18px 13px 94px -40px rgba(0, 0, 0, 0.75);
+  box-shadow: -18px 13px 94px -40px rgba(0, 0, 0, 0.75);
 }
 
-.btn {
-    width: 150px;
-    height: 50px;
-    outline: none!important;
-    border: 1px solid rgb(0, 200, 77);
-    color: rgb(16, 138, 16);
-    font-size: 2rem;
-    border-radius: 0px;
+.todolist-form {
+  width: 100%;
 }
 
-.btn:hover {
-    background-color: rgba(238, 244, 255, 0.883);
-    color: rgb(49, 49, 49);
+.clear-list {
+  display: none;
+  border: none;
+  padding: 1rem 3rem;
+  font-size: 1.7rem;
+  border-radius: 1rem;
+  font-weight: 600;
+  color: red;
+  cursor: pointer;
+  outline: none;
+  margin: 1rem auto;
+  letter-spacing: 0.2rem;
+}
+
+.show {
+  display: inline;
+}
+
+.tittle-container {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.submit-container {
+  margin: auto;
+  width: 70%;
+  border-radius: 1rem;
+  border: none;
+  font-size: 1.7rem;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  justify-content: center;
+  grid-template-areas: "one one one two";
 }
 
 .input {
-    width: 100%;
-    border: 1px solid rgb(0, 200, 77);
-    border-right: none;
-    outline: none;
-    color: rgb(49, 49, 49);
-    font-size: 2rem;
-    padding-left: 20px!important;
+  background-color: rgb(227, 227, 228);
+  border: none;
+  outline: none;
+  height: 3rem;
+  border-radius: 1rem 0 0 1rem;
+  grid-area: one;
+  padding-left: 2rem;
 }
 
-.list {
-    display: flex;
+.submit-btn {
+  height: 3rem;
+  outline: none;
+  cursor: pointer;
+  border: none;
+  background-color: rgba(95, 158, 211, 0.685);
+  border-radius: 0 1rem 1rem 0;
+  grid-area: two;
 }
 
-.text {
-    width: 100%;
+.todo-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+  margin: 0 auto;
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  font-size: 1.5rem;
 }
 
-.text h5 {
-    text-align: start;
-    padding-left: 20px;
-    font-size: 3.5rem;
+.todo {
+  width: 86%;
+  text-align: left;
 }
 
-.icons {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 150px;
+.todolist-btn-container {
+  display: flex;
+  justify-content: center;
+  width: 30%;
 }
 
-.btn-recliclar {
-    font-size: 2.5rem;
-    color: rgb(214, 52, 52);
-    margin: 5px;
+.btn {
+  font-size: 1.5rem;
+  margin-left: 2rem;
+  color: red;
+  border: none;
+  background-color: rgba(245, 222, 179, 0);
+  cursor: pointer;
+  outline: none;
 }
 
-.btn-editar {
-    font-size: 2.5rem;
-    color: rgb(68, 149, 224);
-    margin: 5px;
+.edit-btn {
+  color: rgb(148, 224, 148);
 }
 
-
-
-.btn-done {
-    font-size: 2.8rem;
-    color: rgb(189, 65, 27);
-    margin: 5px;
+.alert-danger {
+  color: red;
 }
 
-.btn-not-done {
-    font-size: 2.8rem;
-    color: rgb(27, 189, 27);
-    margin: 5px;
+.alert-success {
+  color: green;
 }
 
-
-
-
-.icon:hover {
-    cursor: pointer;
-    font-size: 3rem;
+.alert-container {
+  height: 2rem;
+  margin-bottom: 1rem;
 }
-
-.btn-done:hover {
-    font-size: 3.2rem;
-}
-
-.recicle-animation {
-    transform: translateY(-500px) rotate(350deg);
-    transition: 3s;
-    overflow: hidden;
-}
-
-.btn-clear {
-    border-radius: 7px;
-    margin-top: 50px;
-}
-
-.hide-list {
-    display: none
-}
-
-.overline {
-    text-decoration: line-through;
-  }
-
-

@@ -1,0 +1,143 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: sans-serif;
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+    color: rgba(0, 0, 0, 0.658);
+}
+
+article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
+    display: block;
+}
+
+#navbar a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2rem;
+}
+
+#navbar a:active, #nav-bar a:visited {
+    color: white;
+}
+
+#navbar {
+    position: fixed;
+    left: 50px;
+    top: 0px;
+    min-width: 250px;
+    background-color: tomato;
+    height: 100%;
+}
+
+#navbar header {
+    padding-top: 150px;
+    text-align: center;
+    color: white;
+    font-size: 1.5rem;
+}
+
+#navbar ul {
+    list-style: none;
+    padding: 0;
+    padding-left: 10px;
+    margin: 0;
+}
+
+#navbar ul li {
+    margin-left: 30px;
+    margin-top: 50px;
+}
+
+#main-doc {
+    position: absolute;
+    left: 320px;
+    top: 220px;
+    width: auto;
+}
+
+section {
+    margin: 0px 15px;
+    max-width: 1000px;
+    margin-bottom: 50px;
+}
+
+.section-background {
+    background-color: rgb(241, 240, 240);
+    padding: 10px;
+}
+
+.center {
+    text-align: center;
+}
+
+pre {
+    white-space: pre-wrap;
+}
+
+header {
+    font-size: 1.2rem;
+    color: black;
+}
+
+.font-awsome-p {
+    margin:5px 0;
+}
+
+.fa-font-awesome {
+    font-size: 20px;
+    color: #339AF0;
+}
+
+.font-awesome {
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.font-awesome:visited {
+    color: rgba(61, 61, 61, 0.712);
+}
+
+
+@media (max-width: 991px) {
+    #nav-bar {
+        position: relative;
+        flex-direction: row;
+        width: auto;
+        left: auto;
+        top: auto;
+    }
+    #navbar ul {
+        display: flex;
+        flex-direction: row;
+        list-style: none;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        padding-bottom: 10px;
+    }
+    #navbar ul li {
+        margin: 10px 20px;
+    }
+    #main-doc {
+        position: relative;
+        margin: 0px;
+        margin-top: 50px;
+        left: auto;
+        top: auto;
+        width: 100%;
+    }
+    #navbar header {
+        padding: 30px;
+        text-align: center;
+    }
+    section {
+        margin: 0;
+        margin-bottom: 50px;
+        width: 100%;
+    }
+    /* pre{
+        margin-right: 10px;
+    } */
+}

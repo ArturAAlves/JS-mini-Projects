@@ -1,80 +1,173 @@
-const input = document.querySelector(".input");
-const btnAdd = document.querySelector(".btn-add");
-const todoList = document.querySelector(".todo-list");
-const list = document.getElementsByClassName("list");
-
-let store = [""];
-let counter = -1;
-
-
-const btnRemove = document.getElementsByClassName("btn-recliclar");
+const form = document.querySelector(".todolist-form")
+const alertBox = document.querySelector(".alert")
+const submit = document.querySelector(".submit-btn")
+const inputBox = document.querySelector(".input")
+const listContainer = document.querySelector(".todolist-container")
+const clearBtn = document.querySelector(".clear-list")
 
 
-btnAdd.addEventListener("click", (e) => {
-    e.preventDefault();
-    if (input.value === "") {
-        alert("Insert.text")
-    } else {
-        store.push(input.value);
-        counter += 1
-        let createDivList = document.createElement("div");
-        createDivList.classList.add("list")
-        const Html =
-            `<div class="text">
-                    <h5 class="text-info ">${input.value}</h5>
-                </div>
-                <div class="icons">
-                    <span class="btn-done icon"><i class="far fa-check-circle"></i></i></span>
-                    <span class="btn-recliclar icon"><i class="far fa-trash-alt"></i></span>
-                </div>
- `
-        createDivList.innerHTML = Html;
-        todoList.appendChild(createDivList)
-        input.value = "";
-        removeToDo(counter);
-        doneToDo(counter);
+const todoList = []
+
+//* Edit
+let editElement
+let editFlag = false
+let editId = ""
+
+
+window.addEventListener("DOMContentLoaded", setUpItems)
+
+
+
+clearBtn.addEventListener("click", clearItems)
+form.addEventListener("submit", addItem)
+function addItem(e) {
+    e.preventDefault()
+    let inputValue = inputBox.value
+    const id = new Date().getTime().toString()
+    if (inputValue && !editFlag) {
+        createListItem(id, inputValue)
+        diplayAlert(`Item Added to the List`, `success`)
+        clearBtn.classList.add("show")
     }
-})
+    else if (inputValue && editFlag) {
+        editElement.innerHTML = inputValue
+        diplayAlert(`Edited`, `success`)
+        //eddit local storage
+        editLocalStorage(editId, inputValue)
+        setBacktoDefault()
+    }
+    else {
+        diplayAlert(`Plase enter value`, `danger`)
+    }
+    addTolocalStorage(id, inputValue)
+    setBacktoDefault()
+}
 
-const done = document.getElementsByClassName("btn-done")
+//clear items
+function clearItems() {
+    const items = document.querySelectorAll(".todo-item")
+    if (items.length > 0) {
+        items.forEach(function (item) {
+            listContainer.removeChild(item)
+        });
+    }
+    localStorage.clear();
+    diplayAlert(`items removed`, `danger`)
+    clearBtn.classList.remove("show")
+    // localStorage.removeItem(`list`)
+    setBacktoDefault()
+}
 
-function removeToDo(counter) {
-    btnRemove[counter].addEventListener("click", () => {
-        console.log(counter)
-        list[counter].classList.add("hide-list")
-        btnRemove[counter].classList.add("recicle-animation")
+//set back to default
+function setBacktoDefault() {
+    inputBox.value = ""
+    editFlag = false
+    let editId = ""
+    submit.textContent = "Submit"
+}
+
+function deleteItem(e) {
+    const element = e.currentTarget.parentElement.parentElement
+    const id = element.dataset.id
+    listContainer.removeChild(element)
+    if (listContainer.children.length === 0) {
+        clearBtn.classList.remove("show")
+    }
+    diplayAlert(`item removed`, "danger")
+    setBacktoDefault(id)
+    removeFromLocalStorage(id)
+}
+
+function editItem(e) {
+    const element = e.currentTarget.parentElement.parentElement
+    //    editElement =
+    editElement = e.currentTarget.parentElement.previousElementSibling
+    inputBox.value = editElement.innerText
+    editFlag = true
+    editId = element.dataset.id
+    diplayAlert(`Edit the item`, "success")
+    submit.textContent = "Edit"
+    console.log(editId)
+}
+
+
+
+
+//local storage
+function addTolocalStorage(id, value) {
+    // const item = { id:id, value:value }
+    //Short Hand Version when items have the same name
+    const item = { id, value }
+    let items = getLocalStorage()
+    items.push(item)
+    localStorage.setItem("list", JSON.stringify(items))
+}
+
+function editLocalStorage(id, value) {
+    let items = getLocalStorage()
+    items = items.map(function (item) {
+        if (item.id === id) {
+            item.value = value
+        }
+        return item
     })
 }
 
-const textInfo = document.getElementsByClassName("text-info")
-
-function doneToDo(counter) {
-    done[counter].addEventListener("click", () => {
-        textInfo[counter].classList.toggle("overline")
-        done[counter].classList.toggle("btn-not-done")
-        currentTime()
+function removeFromLocalStorage(id) {
+    let items = getLocalStorage()
+    items = items.filter(function (item) {
+        if (item.id !== id) {
+            return item
+        }
     })
+    localStorage.setItem("list", JSON.stringify(items))
 }
 
-const clear = document.querySelector(".btn-clear")
-clear.addEventListener("click", () => {
-    todoList.innerHTML = "";
-    input.value = "";
-})
+
+function getLocalStorage() {
+    return localStorage.getItem("list") ? JSON.parse(localStorage.getItem("list")) : []
+}
+
+
+function setUpItems() {
+    let items = getLocalStorage()
+    if (items.length > 0) {
+        items.forEach(function (item) {
+            createListItem(item.id, item.value)
+        })
+    }
+}
+
+function createListItem(id, inputValue) {
+    const element = document.createElement(`div`)
+    element.classList.add("todo-item")
+    const attr = document.createAttribute(`data-id`)
+    attr.value = id
+    element.setAttributeNode(attr)
+    element.innerHTML =
+        `<div class="todo">
+            <p class="todo-text">${inputValue}</p>
+          </div>
+          <div class="todolist-btn-container">
+            <button type="submit" class="btn edit-btn"> <i class="fas fa-edit"></i> </button>
+            <button type="submit" class="btn delete-btn"> <i class="fas fa-trash"></i> </button>
+          </div>`
+    const editBtn = element.querySelector(".edit-btn")
+    const deleteBtn = element.querySelector(".delete-btn")
+    editBtn.addEventListener("click", editItem)
+    deleteBtn.addEventListener("click", deleteItem)
+    listContainer.appendChild(element)
+}
 
 
 
-
-
-
-// function currentTime() {
-//     const date = new Date(); /* creating object of Date class */
-//     const hour = date.getHours();
-//     const min = date.getMinutes();
-//     const sec = date.getSeconds();
-//     hour = hour < 10 ? "0" + hour : hour;
-//     min = min < 10 ? "0" + min : min;
-//     sec = sec < 10 ? "0" + sec : sec;
-//     document.getElementById("clock").innerText =
-//         hour + " : " + min + " : " + sec;
-// }
+//Displaying Allert
+function diplayAlert(text, action) {
+    alertBox.textContent = text
+    alertBox.classList.add(`alert-${action}`)
+    // Removing Alert 
+    setTimeout(function () {
+        alertBox.textContent = ""
+        alertBox.classList.remove(`alert-${action}`)
+    }, 2000)
+}

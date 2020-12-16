@@ -1,0 +1,80 @@
+/* intro section  */
+#home-page-projects {
+    position: relative;
+    height: 100vh;
+    padding-top: 10vh;
+
+
+}
+
+.home-page-projects-gallery-box {
+    max-height: 50vh;
+    overflow: hidden;
+    padding: 1rem;
+}
+
+
+
+.home-page-projects-gallery-text {
+    position: absolute;
+    z-index: 1;
+    font-size: 10rem;
+    top: 0rem;
+    font-weight: 700;
+    width: 150px;
+    color: $color-hero;
+}
+
+
+.home-page-projects-gallery-img {
+    object-fit: cover;
+    width: 100%;
+    opacity: 0.5;
+}
+
+.home-page-projects-gallery-img:hover {
+
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+
+.scale {
+    animation: scale 1s;
+}
+
+.scaledown {
+
+    animation: scaledown 1s;
+}
+
+
+
+
+
+@keyframes scale {
+    0% {
+        opacity: 0.5;
+        transform: scale(1);
+    }
+
+
+    100% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+}
+
+@keyframes scaledown {
+    0% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+
+
+    100% {
+        opacity: 0.5;
+        transform: scale(1);
+
+    }
+}

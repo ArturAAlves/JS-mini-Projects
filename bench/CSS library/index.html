@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <script defer src="https://pro.fontawesome.com/releases/v5.10.0/js/all.js"
+        integrity="sha384-G/ZR3ntz68JZrH4pfPJyRbjW+c0+ojii5f+GYiYwldYU69A+Ejat6yIfLSxljXxD"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+    <title>CSS Library</title>
+</head>
+
+<body>
+    <nav id="navbar">
+        <header>CSS Library</header>
+        <ul>
+            <li><a href="#introducao_css" class="nav-link">Introducao css</a></li>
+            <li><a href="#resets" class="nav-link">Resets</a></li>
+            <li><a href="#alinhamentos" class="nav-link">Alinhamentos</a></li>
+            <li><a href="#posicao_elements" class="nav-link">Posicao elements</a></li>
+            <li><a href="#flexbox" class="nav-link">Flexbox</a></li>
+            <li><a href="#font_Awesome" class="nav-link">Font Awesome</a></li>
+            <li><a href="#bootstrap_framework" class="nav-link">Bootstrap framework</a></li>
+        </ul>
+    </nav>
+    <main id="main-doc">
+        <section class="main-section" id="introducao_css">
+            <header>introducao css</header>
+            <article>
+                <p>Esta página foi criada com o intuido de servir como libraria de conteudo HTML & CSS, <br>
+                    para dinamizar o meu trabalho no dia a dia.</p>
+            </article>
+        </section>
+        <section class="main-section" id="resets">
+            <header>Resets</header>
+            <article>
+                <p>O CSS Reset é - basicamente - um arquivo que “limpa” os estilos padrões de todos os elementos HTML
+                    que já possuem uma formatação padrão. Ele tira cores, tamanhos de fonte, margins, paddins, efeitos e
+                    decorações… Quase tudo de quase todos os elementos vira “padrão”, como um texto sem
+                    formatação/alteração nenhuma.</p>
+                <p>
+                <pre class="section-background">
+<p class="resets-content">
+*, *::before,*::after {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: sans-serif;
+     line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+}
+
+ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
+    display: block;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+} 
+
+a {
+    text-decoration: none;
+}
+</p>
+</pre>
+                <!-- <p class="center"> <button id="btn-resets">copy</button></p> -->
+                </p>
+            </article>
+        </section>
+        <section class="main-section" id="alinhamentos">
+            <header>Alinhamentos</header>
+            <article>
+                <p>Neste ponto, vamos focar os pontos mais comuns referentes ao alinhamento de elementos em HTML</p>
+                <p>text-align: Alinha o conteudo contido em um elemento do tipo "block".</p>
+                <div class="section-background">
+                    <ul>
+                        <li>center</li>
+                        <li>right</li>
+                        <li>center</li>
+                        <li>justify</li>
+                        <li>inherit</li>
+                    </ul>
+                </div>
+                <p>Temos também o propriedade "direction" que dá a direção a seguir</p>
+                <div class="section-background">
+                    <ul>
+                        <li><code> direction:ltr;</code></li>
+                        <li><code> direction:rtl;</code></li>
+                    </ul>
+                </div>
+                <p>Alinhamento de imagens</p>
+                <p>Um dos shorthands comuns </p>
+                <pre class="section-background">
+<code>
+display: block;
+margin:auto;
+</code>
+ou quando inserida em um <code><span><</span>p></code>:
+
+<code>
+text-align: center;
+</code>
+</pre>
+
+<br>
+<p>O seguinte exemplo serve para alinhar uma <strong>DIV</strong>  ao centro do ecran</p>
+
+<pre class="section-background">
+<code>
+#section {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    text-align: center;
+}
+
+.#section-center{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+</code>
+</pre>
+
+<p>Uma outra forma, pode ser utilizando flexbox, segue o exemplo</p>
+<pre class="section-background">
+<code>
+display: flex;
+align-items: center;
+justify-content: center }
+</code>
+</pre>
+
+
+            </article>
+        </section>
+        <section class="main-section" id="posicao_elements">
+            <header>Posicao elements</header>
+            <article>
+                <p>A utilização de Position, server para especificar o metodo de posicionamento usado para cada elemento
+                </p>
+                <div class="section-background">
+                    <ul>
+                        <li>Static - valor pré-difinido</li>
+                        <li>absolute - o elemento é posicionado relativamente ao seu parente superior</li>
+                        <li>fixed - o elemento é posicionado relativamente á janela do browser</li>
+                        <li>relative - o elemento é posicionado relativamente a sua posiçao normal</li>
+                        <li>sticky - o elemento é posicionado relativamente a posiçao do scroll do utilizador. <br> É
+                            uma
+                            mistura entre posição "relatiive" e "fixed"</li>
+                        <li>initial - o elemento é posicionado na sua posição default</li>
+                        <li>inherit - o elemento herda as propriades do parente superior</li>
+                    </ul>
+                </div>
+            </article>
+        </section>
+        <section class="main-section" id="flexbox">
+            <header>Flexbox</header>
+            <article>
+                <p></p>
+                <p></p>
+                <p></p>
+                <p></p>
+                <p></p>
+                <p></p>
+                <p></p>
+            </article>
+        </section>
+        <section class="main-section" id="font_Awesome">
+            <header>Font Awesome</header>
+            <article>
+                <p>Font Awsome é uma libraria com icons que permite a utilação dos mesmo de forma gratuita</p>
+                <p>Uma forma simples de começar a utilizar esta libraria é copiar o scrip e colocar o mesmo no header,
+                    depois disso apenas utilizar as tags correspondentes a cada simbolo</p>
+                <br>
+                <p class="section-background"><span>
+                        << /span><span> script</span> defer src="https://pro.fontawesome.com/releases/v5.10.0/js/all.js"
+                            integrity="sha384-G/ZR3ntz68JZrH4pfPJyRbjW+c0+ojii5f+GYiYwldYU69A+Ejat6yIfLSxljXxD"
+                            crossorigin="anonymous"></>
+                </p>
+                <p class="font-awsome-p"> <a class="font-awesome"
+                        href="https://fontawesome.com/how-to-use/customizing-wordpress/snippets/setup-cdn-svg"><i
+                            class="fab fa-font-awesome"></i> Clicar para aceder ao site Font Awsome</a></p>
+            </article>
+        </section>
+        <section class="main-section" id="bootstrap_framework">
+            <header>Bootstrap framework</header>
+            <article>
+                <p></p>
+                <p></p>
+                <p></p>
+                <p></p>
+                <p></p>
+            </article>
+        </section>
+    </main>
+
+</body>
+<script src="main.js"></script>
+
+</html>
